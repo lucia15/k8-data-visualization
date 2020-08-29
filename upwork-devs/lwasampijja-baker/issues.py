@@ -16,7 +16,7 @@ warnings.filterwarnings('ignore')
 class Issues:
     def __init__(self, repos):
         self.repos = repos
-        token = '9fabf055270b65bed1c1acbbfef16dd879e7aa19'
+        token = 'mytoken'
         self.headers = {'Authorization': f'token {token}'}
         self.configure_pandas()
         self.df = self.init_df()
