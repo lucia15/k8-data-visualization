@@ -2,6 +2,10 @@ venv/
 upwork-devs/moses-mugo/models/config.py
 __pycache__
 .ipynb_checkpoints/
+
+=======
 .local
 .cache
 .ipython
+
+.idea/
