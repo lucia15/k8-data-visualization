@@ -7,9 +7,5 @@ __pycache__
 .local
 .cache
 .ipython
-<<<<<<< HEAD
-.env
-=======
-
 .idea/
->>>>>>> 13e4720fb3eb142a48a58b7bbaad3dd93e86f4ab
+.env
