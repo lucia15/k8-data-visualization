@@ -9,24 +9,10 @@ sure they run with out any bugs before a pull request.
 
 **Software**:
 
-- Python >3.3
+- Python >3.7
 - pip >= 20
 - An updated web browser
 - Optional: git, virtualenv
 
 
 
-### Steps Set up a virtual environment and run the tests locally in bash 
-
-
-git clone -b lwasampijja-baker/pipeline git@github.com:baker371/k8-data-visualization.git
-
-cd pipeline
-
-python3 -m venv environment
-
-source environment/bin/activate
-
-python setup.py develop
-
-pytest
