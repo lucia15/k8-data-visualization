@@ -2,7 +2,6 @@
 
 If you are working on this project via Upwork, see also our [Upwork Rules of Engagement](https://github.com/filetrust/Open-Source/blob/master/upwork/rules-of-engagement.md)
 
-
 If you are newcomer, then please check [Glasswall newcomers checklist ](https://github.com/filetrust/Open-Source )
 
 ## Project Brief
@@ -23,7 +22,6 @@ Objective: Consume, process, normalize and visualize GitHub Issues data
 * At the moment we are using https://www.zenhub.com/extension to consolidate and understand the data, but there are a number of workflows that require the creation of data-connectors and custom visualizations
 
 * Here is the recommended workflow for this project:
-
   * Create API (Python or Node) to consume data from GitHub (all repos are public, so there is no dependency on Glasswall to provide access)
   * Write Tests for all APIs created
   * Create CI Pipeline
@@ -34,7 +32,6 @@ Objective: Consume, process, normalize and visualize GitHub Issues data
   * Create as much detailed technical documentation as possible (namely architecture and data-flow diagrams)
 
 * Key points   
-
  * Setup a serverless workflow which gets triggered with GitHub issues events (We should evaluate if we can use github actions or else go with AWS)
  * The event data in JSON format (committed to a GitHub repo) to be injected to the elastic server(e..g what log_to_elk does for JIRA).
  * Leverage osbot_aws api from public APIS https://github.com/owasp-sbot/ managed by GW. The bot API will fetch data from the elastic server. 
@@ -42,7 +39,6 @@ Objective: Consume, process, normalize and visualize GitHub Issues data
  * The data stored on a separate repo will allow the Developers working on the visualization to not have to deal with the data collection.
  * For visualisation, use notebooks since they are good for prototyping, but we will need a Web Based UI to access the data.
  * All code should follow Coding guideline, formatted in IDE and static analysis need to be done.
-
 
   
 ## Running Jupyter Notebooks
