@@ -49,10 +49,49 @@ Objective: Consume, process, normalize and visualize GitHub Issues data
 
 Add support for running Jupyter Notebooks docker image locally (mounting the current source code as the root of the notebooks folder)
 
+### Windows Environments
+
+* Navigate to "k8-data-visualization\docker\local-jupyter" directory. 
 Fire the following command
+
+```
+docker build -t local-jupyter .
+```
+Local docker image will be built
+
+<br><img src="./img/build_nbs.jpeg" alt="Access" width="650"/><br>
+
+* Navigate back to "k8-data-visualization\" directory. 
+Fire the following command
+
+```
+docker run -it --rm -p 8888:8888 -v ${PWD}:/home/jovyan/work local-jupyter
+```
+Local docker image will be started
+
+<br><img src="./img/start_nbs.png" alt="Access" width="650"/><br>
+
+
+* Access notebooks with the URL printed in the started logs.
+
+<br><img src="./img/started_nbs.png" alt="Access" width="650"/><br>
+
+
+### Unix and MAC Environments
+
+* Fire the following command
 ```
 sh run-local-jupyter.sh
 ```
+Local docker image will be built and started
+
+<br><img src="./img/start_unix_mac.png" alt="Access" width="650"/><br>
+
+* Access notebooks with the URL printed in the started logs.
+
+<br><img src="./img/started_nbs.png" alt="Access" width="650"/><br>
+
+
 ## Coding Guideline
 
 These are the coding guidelines we tend to follow for Python projects at Glasswall
