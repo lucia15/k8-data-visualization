@@ -3,3 +3,5 @@
   * $source k8-venv/bin/activate`
 2. Run the command below to install dependencies
   * $pip install -r requirements.txt 
+
+main.py pulls all the pull requests in the repos listed in the models/repo.py and downloads them to data as a csv file
