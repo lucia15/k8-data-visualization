@@ -13,7 +13,9 @@ from bokeh.palettes import Spectral4
 import warnings
 warnings.filterwarnings('ignore')
 
+
 class Issues:
+        
     def __init__(self, repos):
         self.repos = repos
         token = 'mytoken'
@@ -87,8 +89,8 @@ class Issues:
         )
         chart.set_xticklabels(chart.get_xticklabels(), rotation=45, horizontalalignment='right')
         plt.title("A bar Graph showing number of Issues per date")
-
-
+    
+    
     def show_state_user(self):
         plt.figure(figsize=(15,10))
         sns.catplot(y="user.login", hue="state", kind="count",palette="pastel", edgecolor=".6", data=self.df, height=10);
@@ -103,7 +105,7 @@ class Issues:
         plt.xticks(keys)
         plt.grid()
         plt.show()
-
+    
     def show_bar_chart_by_user(self):
         # Number of Issues per Individual
         self.df['user.login'].value_counts().head(30).plot(kind='barh', figsize=(20,10), title="Bar Graph Showing Number of Issues per user")
@@ -158,6 +160,7 @@ class Issues:
         output_file("interactive_graph.html")
         show(plot)
 
+    
 
         
         
