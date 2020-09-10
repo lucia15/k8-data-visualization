@@ -9,17 +9,15 @@ from bokeh.io import show, output_file
 from bokeh.models import Plot, Range1d, MultiLine, Circle, HoverTool, TapTool, BoxSelectTool, WheelZoomTool
 from bokeh.models.graphs import from_networkx, NodesAndLinkedEdges, EdgesAndLinkedNodes
 from bokeh.palettes import Spectral4
-""" Documentation for classes """
 class Issues:
 
     def __init__(self, repos):
         self.repos      = repos
-        token           = 'TOKEN'
+        token           = 'token'
         self.headers    = {'Authorization': f'token {token}'}
         self.configure_pandas()
         self.df         = self.init_df()
 
-    """ Small documentation for methods """
     def init_df(self):
         try:
             dfs         = []
@@ -39,11 +37,11 @@ class Issues:
         return self.df
 
     def configure_pandas(self):
-        pd.set_option('display.max_rows'            , None )
-        pd.set_option('display.max_columns'         , None )
-        pd.set_option('display.width'               , None )
-        pd.set_option('display.max_colwidth'        , -1.  )
-        pd.set_option('display.expand_frame_repr'   , False)
+        pd.set_option('display.max_rows', None)
+        pd.set_option('display.max_columns', None)
+        pd.set_option('display.width', None)
+        pd.set_option('display.max_colwidth', None)
+        pd.set_option('display.expand_frame_repr', False)
 
     def normalize_data(self):
         df                      = self.df
@@ -53,7 +51,7 @@ class Issues:
 
     def show_pie(self, column):
         plt.figure                             (figsize = (8,8))
-        self.df[column].value_counts().plot.   (kind    = 'pie', autopct = '%.2f', fontsize = 20)
+        self.df[column].value_counts().plot(kind    = 'pie', autopct = '%.2f', fontsize = 20)
         plt.show()
 
     def show_bar_chart_by_repo(self):
@@ -90,43 +88,48 @@ class Issues:
         plt.show()       
          
     def show_en_graph(self):
-        df = self.df
-        df = df.rename({'user.login':'dusers'}, axis=1)
-        issues = list(df.title.unique())
-        users = list(df.dusers.unique())
+        df                  = self.df
+        df                  = df.rename({'user.login':'dusers'}, axis=1)
+        issues              = list(df.title.unique())
+        users               = list(df.dusers.unique())
         plt.figure(figsize=(12, 12))
-        g = nx.from_pandas_edgelist(df, source='dusers', target='title', edge_attr='dusers') 
-        layout = nx.spring_layout(g,iterations=50)
+        g                   = nx.from_pandas_edgelist(df, source='dusers', target='title', edge_attr='dusers') 
+        layout              = nx.spring_layout(g,iterations=50)
+
         nx.draw_networkx_edges(g, layout, edge_color='#AAAAAA')
-        users = [node for node in g.nodes() if node in df.dusers.unique()]
-        size = [g.degree(node) * 80 for node in g.nodes() if node in df.dusers.unique()]
+        users               = [node for node in g.nodes() if node in df.dusers.unique()]
+        size                = [g.degree(node) * 80 for node in g.nodes() if node in df.dusers.unique()]
+
         nx.draw_networkx_nodes(g, layout, nodelist=users, node_size=size, node_color='lightblue')
-        issues = [node for node in g.nodes() if node in df.title.unique()]
+        issues              = [node for node in g.nodes() if node in df.title.unique()]
+
         nx.draw_networkx_nodes(g, layout, nodelist=issues, node_size=100, node_color='#AAAAAA')
-        high_degree_issues = [node for node in g.nodes() if node in df.title.unique() and g.degree(node) > 1]
+        high_degree_issues  = [node for node in g.nodes() if node in df.title.unique() and g.degree(node) > 1]
+
         nx.draw_networkx_nodes(g, layout, nodelist=high_degree_issues, node_size=100, node_color='#fc8d62')
-        user_dict = dict(zip(users, users))
+        user_dict           = dict(zip(users, users))
+        
         nx.draw_networkx_labels(g, layout, labels=user_dict)
-        plt.axis('off')
-        plt.title("Network Graph of Users and the Issues generated")
+        plt.axis    ('off')
+        plt.title   ("Network Graph of Users and the Issues generated")
         plt.show()
     
     # Exporting Interactive Graph
         TOOLTIPS = [
     ("name", "@dusers"),
 ]
-        plot = Plot(x_range=Range1d(-1.1,1.1), y_range=Range1d(-1.1,1.1))
-        plot.title.text = "Network Graph of Users and the Issues generated"
+        plot                                            = Plot(x_range=Range1d(-1.1,1.1), y_range=Range1d(-1.1,1.1))
+        plot.title.text                                 = "Network Graph of Users and the Issues generated"
         plot.add_tools(HoverTool(tooltips=TOOLTIPS), TapTool(), BoxSelectTool(), WheelZoomTool())
-        graph_renderer = from_networkx(g, nx.spring_layout, scale=1, center=(0,0))
-        graph_renderer.node_renderer.glyph = Circle(size=15, fill_color=Spectral4[0])
-        graph_renderer.node_renderer.selection_glyph = Circle(size=15, fill_color=Spectral4[2])
-        graph_renderer.node_renderer.hover_glyph = Circle(size=15, fill_color=Spectral4[1])
-        graph_renderer.edge_renderer.glyph = MultiLine(line_color="#CCCCCC", line_alpha=0.8, line_width=5)
-        graph_renderer.edge_renderer.selection_glyph = MultiLine(line_color=Spectral4[2], line_width=5)
-        graph_renderer.edge_renderer.hover_glyph = MultiLine(line_color=Spectral4[1], line_width=5)
-        graph_renderer.selection_policy = NodesAndLinkedEdges()
-        graph_renderer.inspection_policy = EdgesAndLinkedNodes()
-        plot.renderers.append(graph_renderer)
+        graph_renderer                                  = from_networkx(g, nx.spring_layout, scale=1, center=(0,0))
+        graph_renderer.node_renderer.glyph              = Circle(size=15, fill_color=Spectral4[0])
+        graph_renderer.node_renderer.selection_glyph    = Circle(size=15, fill_color=Spectral4[2])
+        graph_renderer.node_renderer.hover_glyph        = Circle(size=15, fill_color=Spectral4[1])
+        graph_renderer.edge_renderer.glyph              = MultiLine(line_color="#CCCCCC", line_alpha=0.8, line_width=5)
+        graph_renderer.edge_renderer.selection_glyph    = MultiLine(line_color=Spectral4[2], line_width=5)
+        graph_renderer.edge_renderer.hover_glyph        = MultiLine(line_color=Spectral4[1], line_width=5)
+        graph_renderer.selection_policy                 = NodesAndLinkedEdges()
+        graph_renderer.inspection_policy                = EdgesAndLinkedNodes()
+        # plot.renderers.append(graph_renderer)
         output_file("interactive_graph.html")
         show(plot)
