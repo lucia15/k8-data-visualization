@@ -1,7 +1,5 @@
 # k8-data-visualization
 
-# Visualisations
-
 ## 1. Github Issue Visualisations
 This project is aimed at comming up with useful visuals and insights to the gitbub issues that are generated on different repositores.
 #### Files created
