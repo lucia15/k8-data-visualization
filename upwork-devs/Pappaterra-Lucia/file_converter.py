@@ -8,12 +8,12 @@ def xlsx_to_csv(xlsxfile, sheetname):
 
     data = pd.read_excel(xlsxfile, sheetname, index_col=None)
        
-    if sheetname == 'Upwork People List':
+    if sheetname == 'Upwork People List' or sheetname == 'Offboarded People':
         data = data.loc[:, ~data.columns.str.contains('^Unnamed')]
         
     elif sheetname == 'Projects Team Structure':
-        data.columns = data.iloc[1].tolist()
-        data = data.iloc[2:]
+        data.columns = data.iloc[2].tolist()
+        data = data.iloc[3:]
         
         # Save Resource and responsability separately
         data2 = data.copy()
