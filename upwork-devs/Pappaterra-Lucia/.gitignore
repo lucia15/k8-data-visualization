@@ -1,0 +1,4 @@
+#Ignore files with sensitive information
+csv_files
+yaml_files
+Org_Chart.xlsx
