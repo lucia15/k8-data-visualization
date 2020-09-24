@@ -1,18 +1,24 @@
 # Organization Chart Visualization
 
+
 Jupyter-Notebook Org_Chart_Vis.pynb generates visualizations from the sheets in 
 
-https://drive.google.com/file/d/1jX-FBOynt0A-uwVPk2EZRB2rsX3_c_2b/view
+https://docs.google.com/spreadsheets/d/1GCDWsyRc2CIkunovZ2-zZaqOdaienEBy/view
 
-that are constantly being updated. Easy to consume outputs are save in *outputs* folder.
+that are constantly being updated. 
 
-Before running it, it's necessary to generate csv and yaml files from sheets
-latest version. To do so Jupyter-Notebook Generate_files.ipynb must be run.
+Jupyter-Notebook Make_PowerPoint_Presentation.pynb autocreate power point presentation
+for 'Project Team Structure' sheet.
+
+Easy to consume outputs are save in *outputs* folder.
+
+Before running those two notebooks, it's necessary to generate csv and yaml files from 
+spreadsheets latest version. To do so Jupyter-Notebook Generate_files.ipynb must be run.
 
 This generates the required files that will be saved in the folders *csv_files* 
 and *yaml_files* respectively, for later use in updated visualizations. 
 
-*csv_files*, *yam_files* and *outputs* folders must be created locally since they 
+*csv_files* and *yam_files* folders must be created locally since they 
 may contain sensitive information.
 
 
