@@ -38,8 +38,13 @@ This section visualises the different pipelines setup within Zenhub to come up w
 
 #### Usage
 (i)  Import dependencies e.g from from zen_pipe import show_table
+
 (ii) Add github token, line 14
+
 (iii) Add zenhub token, line 15
+
 (iv) Add github repo code, line 16,17 as shown in the image below
+
 ![zen5](https://user-images.githubusercontent.com/8102313/94305687-419b2100-ff7a-11ea-9760-a29fa58ec800.png)
+
 (v) show_table(), displays the status table above.
