@@ -5,15 +5,31 @@ from graphviz import Digraph
 
 
 # Colors
-a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee,ff,gg = [plt.cm.tab20(0), 
-        plt.cm.tab20(2), plt.cm.tab20(4), plt.cm.tab20(6), plt.cm.tab20(8), 
-        plt.cm.tab20(10), plt.cm.tab20(12), plt.cm.tab20(14), plt.cm.tab20(16), 
-        plt.cm.tab20(18), plt.cm.tab20(1), plt.cm.tab20(3), plt.cm.tab20(5), 
-        plt.cm.tab20(7), plt.cm.tab20(9), plt.cm.tab20(11), plt.cm.tab20(13), 
-        plt.cm.tab20(15), plt.cm.tab20(17), plt.cm.tab20(19), plt.cm.tab20(0), 
-        plt.cm.tab20(2), plt.cm.tab20(4), plt.cm.tab20(6), plt.cm.tab20(8), 
-        plt.cm.tab20(10), plt.cm.tab20(12), plt.cm.tab20(14), plt.cm.tab20(16), 
-        plt.cm.tab20(18), plt.cm.tab20(1), plt.cm.tab20(3), plt.cm.tab20(5)]
+color_set = [plt.cm.tab20(0), plt.cm.tab20(2), plt.cm.tab20(4), plt.cm.tab20(6), 
+    plt.cm.tab20(8), plt.cm.tab20(10), plt.cm.tab20(12), plt.cm.tab20(14), 
+    plt.cm.tab20(16), plt.cm.tab20(18), plt.cm.tab20(1), plt.cm.tab20(3), 
+    plt.cm.tab20(5), plt.cm.tab20(7), plt.cm.tab20(9), plt.cm.tab20(11), 
+    plt.cm.tab20(13), plt.cm.tab20(15), plt.cm.tab20(17), plt.cm.tab20(19), 
+    plt.cm.tab20b(0), plt.cm.tab20b(2), plt.cm.tab20b(4), plt.cm.tab20b(6), 
+    plt.cm.tab20b(8), plt.cm.tab20b(10), plt.cm.tab20b(12), plt.cm.tab20b(14), 
+    plt.cm.tab20b(16), plt.cm.tab20b(18), plt.cm.tab20b(1), plt.cm.tab20b(3), 
+    plt.cm.tab20b(5), plt.cm.tab20b(7), plt.cm.tab20b(9), plt.cm.tab20b(11), 
+    plt.cm.tab20b(13), plt.cm.tab20b(15), plt.cm.tab20b(17), plt.cm.tab20b(19),
+    plt.cm.Pastel1(0), plt.cm.Pastel1(1), plt.cm.Pastel1(2), 
+    plt.cm.Pastel1(3),plt.cm.Pastel1(4), plt.cm.Pastel1(5),
+    plt.cm.Pastel1(6), plt.cm.Pastel1(7), plt.cm.Pastel1(8),
+    plt.cm.Set3(0), plt.cm.Set3(1), plt.cm.Set3(2), plt.cm.Set3(3), 
+    plt.cm.Set3(4), plt.cm.Set3(5), plt.cm.Set3(6), plt.cm.Set3(7), 
+    plt.cm.Set3(8), plt.cm.Set3(9), plt.cm.Set3(10), plt.cm.Set3(11),
+    plt.cm.Accent(7), plt.cm.Accent(6), plt.cm.Accent(5), plt.cm.Accent(4),
+    plt.cm.Accent(3), plt.cm.Accent(2), plt.cm.Accent(1), plt.cm.Accent(0),
+    plt.cm.Dark2(7), plt.cm.Dark2(6), plt.cm.Dark2(5), plt.cm.Dark2(4),
+    plt.cm.Dark2(3), plt.cm.Dark2(2), plt.cm.Dark2(1), plt.cm.Dark2(0),
+    plt.cm.tab20c(0), plt.cm.tab20c(2), plt.cm.tab20c(4), plt.cm.tab20c(6), 
+    plt.cm.tab20c(8), plt.cm.tab20c(10), plt.cm.tab20c(12), plt.cm.tab20c(14), 
+    plt.cm.tab20c(16), plt.cm.tab20c(18), plt.cm.tab20c(1), plt.cm.tab20c(3), 
+    plt.cm.tab20c(5), plt.cm.tab20c(7), plt.cm.tab20c(9), plt.cm.tab20c(11), 
+    plt.cm.tab20c(13), plt.cm.tab20c(15), plt.cm.tab20c(17), plt.cm.tab20c(19)]
 
 
 def graph(df, df2):
@@ -31,7 +47,7 @@ def graph(df, df2):
         else:
             pm = pm.split(', ')   
          
-        rnr = list(df2[df2['project_name'] == p]['resource'])
+        rnr = list(df2[df2['project_name'] == p]['resource_name'])
         
         if len(rnr)>0:
             rnr = "\n".join(rnr)
@@ -44,28 +60,29 @@ def graph(df, df2):
                     g.edge(elem, rnr)
     
     # save graph to pdf                
-    g.render('outputs/teams_graph.gv', view=True)
-    
+    g.render('outputs/teams_graph.gv', view=True)   
     return g
     
 
-def bar_plot(df, df2):
+def bar_plot(df, df2, colors=color_set):
 
     proj = list(df['project_name'])
     
     rnr = []
     for pr in proj:
-        rnr.append(list(df2[df2['project_name']==pr]['resource']))
+        rnr.append(list(df2[df2['project_name']==pr]['resource_name']))
         
     rnr_counts=[]  
     for elem in rnr:
         rnr_counts.append(len(elem))
 
-    fig = plt.figure()
+    fig = plt.figure(figsize=(18,7))
     ax = fig.add_axes([0,0,1,1])
     langs = proj
     
-    ax.bar(langs, rnr_counts, color=(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee,ff,gg))
+    colors = tuple(colors[:len(proj)])
+    
+    ax.bar(langs, rnr_counts, color=colors)
        
     # Make some labels
     labels = [str(elem) for elem in rnr_counts]
@@ -82,7 +99,7 @@ def bar_plot(df, df2):
     plt.show()
 
 
-def pie_chart(df, df2):
+def pie_chart(df, df2, colors=color_set):
     df['delivery_manager'].replace('', float("NaN"), inplace=True)
     df['delivery_manager'].fillna('No Delivery Managers yet', inplace=True)  
 
@@ -90,7 +107,7 @@ def pie_chart(df, df2):
     
     rnr = []
     for p in proj:
-        rnr.append(list(df2[df2['project_name']==p]['resource']))  
+        rnr.append(list(df2[df2['project_name']==p]['resource_name']))  
     
     pms = convert_to_lists(df['delivery_manager'])
     
@@ -121,41 +138,31 @@ def pie_chart(df, df2):
 
     ax.axis('equal')
     
-    # Colors
-    # Colors
-    a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee,ff,gg = [plt.cm.tab20(0), 
-        plt.cm.tab20(2), plt.cm.tab20(4), plt.cm.tab20(6), plt.cm.tab20(8), 
-        plt.cm.tab20(10), plt.cm.tab20(12), plt.cm.tab20(14), plt.cm.tab20(16), 
-        plt.cm.tab20(18), plt.cm.tab20(1), plt.cm.tab20(3), plt.cm.tab20(5), 
-        plt.cm.tab20(7), plt.cm.tab20(9), plt.cm.tab20(11), plt.cm.tab20(13), 
-        plt.cm.tab20(15), plt.cm.tab20(17), plt.cm.tab20(19), plt.cm.tab20(0), 
-        plt.cm.tab20(2), plt.cm.tab20(4), plt.cm.tab20(6), plt.cm.tab20(8), 
-        plt.cm.tab20(10), plt.cm.tab20(12), plt.cm.tab20(14), plt.cm.tab20(16), 
-        plt.cm.tab20(18), plt.cm.tab20(1), plt.cm.tab20(3), plt.cm.tab20(5)]
+    colors = colors[:len(proj)]
     
-    colors=[]
+    colors1=[]
     pms2 = []     
-    for cr, i in zip([a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee,ff,gg], range(len(rnr))):
+    for cr, i in zip(colors, range(len(rnr))):
         rs = rnr[i]           
         if len(rs)>0:
-            colors.append(cr)
+            colors1.append(cr)
             pms2.append(pms[i])
            
     # First Ring (Inside)
-    mypie, _ = ax.pie(group_size, radius=1-0.3, colors=colors) #radius=
+    mypie, _ = ax.pie(group_size, radius=1-0.3, colors=colors1) 
     plt.setp(mypie, width=0.4, edgecolor='white')
    
     
-    colors_=[]
-    for cr, pr, j in zip(colors, group_names, range(len(pms2))):
+    colors2=[]
+    for cr, pr, j in zip(colors1, group_names, range(len(pms2))):
         pm = pms2[j]
         if len(pm)>0:
-            colors_ = colors_ + [cr] * len(pm)
+            colors2 = colors2 + [cr] * len(pm)
         else:
-            colors_ = colors_ + [cr]    
+            colors2 = colors2 + [cr]    
     
     # Second Ring (Outside)
-    mypie2, _ = ax.pie(subgroup_size, radius=1, colors=colors_)                        
+    mypie2, _ = ax.pie(subgroup_size, radius=1, colors=colors2)                        
     plt.setp(mypie2, width=0.4, edgecolor='white')
 
     ax.legend(mypie, group_names,
@@ -198,3 +205,4 @@ def convert_to_lists(df_col):
         else:
             ll.append(elem.split(', '))
     return list(ll)  
+    
