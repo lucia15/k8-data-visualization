@@ -86,12 +86,13 @@ def make_presentation(sheet_name, output_to):
     if sheet_name == 'Projects Team Structure':
     
         with open(os.path.join('yaml_files', sheet_name+'.yml'), 'r') as f:
-            df = pd.json_normalize(yaml.load(f, Loader=yaml.FullLoader))
-            #df = pd.json_normalize(yaml.safe_load(f))
+            df = pd.json_normalize(yaml.safe_load(f))
+            #df = pd.json_normalize(yaml.load(f, Loader=yaml.FullLoader))
+            
         
         with open('yaml_files/Resource and responsability.yml', 'r') as f:
-            df2 = pd.json_normalize(yaml.load(f, Loader=yaml.FullLoader))
-            #df2 = pd.json_normalize(yaml.safe_load(f))
+            df2 = pd.json_normalize(yaml.safe_load(f))
+            #df2 = pd.json_normalize(yaml.load(f, Loader=yaml.FullLoader))
             
         for row_index in range(len(df)):
             add_project_slide(prs, df, row_index, df2)
