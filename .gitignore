@@ -7,5 +7,5 @@ __pycache__
 .local
 .cache
 .ipython
-
 .idea/
+.env
