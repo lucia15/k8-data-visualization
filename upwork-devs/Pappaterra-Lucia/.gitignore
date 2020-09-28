@@ -3,6 +3,8 @@
 *.yml
 *.yaml
 *.xlsx
-*.png
 *.gv
 *.pdf
+*.pptx
+bar_plot.png
+pie_chart.png
