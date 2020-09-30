@@ -55,12 +55,19 @@ The report is in a Google colab notebook and you will need to be invited by Gmai
 
 #### Usage
 (i)  On invite, got to the Runtime menu and select Run all, for an updated report.
+
 (ii) The last part of the report, has a filter section: To filter by person or repo, fill in the desired filter below. For example.
+
 (If my person of intrest is baker371, filter = "baker371". Note, the filter can take in multiple inputs e.g 
+
 filter = "baker371", "GiuseMSD" 
+
 The same principal applies even when searching for a particular repo e.g 
+
 filter = "k8-data-visualization"
+
 Now run the corresponding two code blocks.
+
 (iii) To export the filtered report to excel, run the last code block, open the folder to the left to download the csv file named report.csv.
 
 
