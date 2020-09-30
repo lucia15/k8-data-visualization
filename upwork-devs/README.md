@@ -38,13 +38,30 @@ This section visualises the different pipelines setup within Zenhub to come up w
 
 #### Usage
 (i)  Import dependencies e.g from from zen_pipe import show_table
-
 (ii) Add github token, line 14
-
 (iii) Add zenhub token, line 15
-
 (iv) Add github repo code, line 16,17 as shown in the image below
-
 ![zen5](https://user-images.githubusercontent.com/8102313/94305687-419b2100-ff7a-11ea-9760-a29fa58ec800.png)
-
 (v) show_table(), displays the status table above.
+
+## 3. Visualising Issues Accross Multiple Platforms
+
+![plat](https://user-images.githubusercontent.com/8102313/94736551-18610300-0375-11eb-83d9-285577873479.png)
+
+The report is in a Google colab notebook and you will need to be invited by Gmail to have access. A preview of the code is available on github for review.
+
+#### File created
+- All Progress Issues.ipynb
+
+#### Usage
+(i)  On invite, got to the Runtime menu and select Run all, for an updated report.
+(ii) The last part of the report, has a filter section: To filter by person or repo, fill in the desired filter below. For example.
+(If my person of intrest is baker371, filter = "baker371". Note, the filter can take in multiple inputs e.g 
+filter = "baker371", "GiuseMSD" 
+The same principal applies even when searching for a particular repo e.g 
+filter = "k8-data-visualization"
+Now run the corresponding two code blocks.
+(iii) To export the filtered report to excel, run the last code block, open the folder to the left to download the csv file named report.csv.
+
+
+
