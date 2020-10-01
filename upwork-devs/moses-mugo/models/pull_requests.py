@@ -12,7 +12,7 @@ class PR:
         self.df = self.get_prs()
 
     def get_prs(self):
-        url = self.github_api + '/repos/filetrust/'+self.repo+'/pulls'
+        url = self.github_api + '/repos/k8-proxy/'+self.repo+'/pulls'
         try:
             pr = pd.DataFrame(self.gh_session.get(url=url).json())
             return pr
@@ -24,6 +24,7 @@ class PR:
             return "No PR found"
         else:
             return {
+                "repo_name": self.repo,
                 "total_number_of_PR": len(self.df),
                 "number_of_open_PR": self.df.query("state=='open'").shape[0],
                 "number_of_closed_PR": self.df.query("state=='closed'").shape[0],
@@ -35,6 +36,7 @@ class PR:
             pr = self.df.loc[self.df.number == int(num)]
             return {"pr_number": pr.number.iloc[0],
                     "repo": self.repo,
+                    "link": pr.url.iloc[0],
                     "node_id": pr.node_id.iloc[0],
                     "state": pr.state.iloc[0],
                     "locked": pr.locked.iloc[0],
@@ -53,4 +55,3 @@ class PR:
                     }
         except:
             return {"no PR with that number"}
-

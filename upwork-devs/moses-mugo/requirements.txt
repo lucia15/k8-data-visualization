@@ -1,7 +1,7 @@
-PyGithub
+Ipython
 requests
 pandas
 seaborn
 numpy
 matplotlib
-
+wordcloud
