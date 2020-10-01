@@ -49,5 +49,5 @@ class gitPulls ():
             except:
                 print("Unexpected error:", sys.exc_info()[0])
 
-gp = gitPulls("config.json")
+gp = gitPulls("modules/config.json")
 gp.getPullRequests()

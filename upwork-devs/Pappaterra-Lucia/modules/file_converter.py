@@ -6,44 +6,38 @@ import os
 
 def xlsx_to_csv(xlsxfile, sheetname):
 
-    data = pd.read_excel(xlsxfile, sheetname, index_col=None)
-    # drop unnamed columns
+    data = pd.read_excel(xlsxfile, sheetname, index_col=None)   
     
     if sheetname == 'Upwork People List' or sheetname == 'Offboarded People':
+        # drop unnamed columns
         data = data.loc[:, ~data.columns.str.contains('^Unnamed')]
         
     elif sheetname == 'Projects Team Structure':
-        columns_names = []
-        
-        for elem in data.iloc[2].tolist():
-            columns_names.append(elem.replace('\n', ' '))
-            
-        data.columns = columns_names
-        
-        data = data.iloc[3:]
+    
+        data = data.rename(columns={'Business Owner\nStakeholders': 'Stakeholders', 'Responsibility for the project': 'Responsibility'})
         
         data['Project Name'] = data['Project Name'].apply(lambda s: s.replace('#', '') if isinstance(s, str) else s)
         
         ############# Save Resource and Responsability separately ##############
         data2 = data.copy()
-        data2.drop(data2.columns.difference(['Project Name','Resource Name', 'Responsibility for the project']), 1, inplace=True)
+        data2.drop(data2.columns.difference(['Project Name','Resource Name', 'Responsibility']), 1, inplace=True)
         
         # drop empty rows
         data2.replace('', float("NaN"), inplace=True)
         data2.dropna(how='all', inplace=True) 
         
         data2['Project Name'] = data2['Project Name'].ffill()
-        data2['Project Name'] = data2['Project Name'].apply(lambda s: s.rstrip('\n'))
+        data2['Project Name'] = data2['Project Name'].apply(lambda s: s.rstrip('\n') if isinstance(s, str) else s)
                  
         # dropping null value columns to avoid errors 
         data2.dropna(inplace = True)
         
         # replace '–' by '-'
-        data2['Resource Name'] = data2['Resource Name'].apply(lambda s: s.replace('–', '-'))
-        data2['Responsibility for the project'] = data2['Responsibility for the project'].apply(lambda s: s.replace('–', '-'))
+        data2['Resource Name'] = data2['Resource Name'].apply(lambda s: s.replace('–', '-') if isinstance(s, str) else s)
+        data2['Responsibility for the project'] = data2['Responsibility'].apply(lambda s: s.replace('–', '-') if isinstance(s, str) else s)
         
         # drop responsability from name column
-        data2['Resource Name'] = data2['Resource Name'].apply(lambda s: s.split('-', 1)[0])
+        data2['Resource Name'] = data2['Resource Name'].apply(lambda s: s.split('-', 1)[0] if isinstance(s, str) else s)
         
         # delete spaces and line breaks
         data2['Resource Name'] = data2['Resource Name'].apply(lambda s: s.rstrip('\n').strip() if isinstance(s, str) else s)    
@@ -56,14 +50,15 @@ def xlsx_to_csv(xlsxfile, sheetname):
         data['Delivery Manager'] = data['Delivery Manager'].apply(lambda s: s.rstrip('\n').strip().replace('\n', ', ') if isinstance(s, str) else s)            
         
         data = data.loc[:, ~data.columns.str.contains('Resource Name')]
-        data = data.loc[:, ~data.columns.str.contains('Responsibility for the project')]
+        data = data.loc[:, ~data.columns.str.contains('Responsibility')]
         
         # drop empty rows
         data.replace('', float("NaN"), inplace=True)
         data.dropna(how='all', inplace=True) 
         
         for col in data.columns:
-            data[col] = data[col].apply(lambda s: s.replace('\n', '') if isinstance(s, str) else s)
+            if col != 'Stakeholders':
+                data[col] = data[col].apply(lambda s: s.replace('\n', '') if isinstance(s, str) else s)
     
     elif sheetname == 'Skills Matrix':
         h1 = data.iloc[5]

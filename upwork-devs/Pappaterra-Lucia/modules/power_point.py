@@ -86,10 +86,13 @@ def make_presentation(sheet_name, output_to):
     if sheet_name == 'Projects Team Structure':
     
         with open(os.path.join('yaml_files', sheet_name+'.yml'), 'r') as f:
-            df = pd.json_normalize(yaml.safe_load(f, Loader=yaml.FullLoader))
+            df = pd.json_normalize(yaml.safe_load(f))
+            #df = pd.json_normalize(yaml.load(f, Loader=yaml.FullLoader))
+            
         
         with open('yaml_files/Resource and responsability.yml', 'r') as f:
-            df2 = pd.json_normalize(yaml.safe_load(f, Loader=yaml.FullLoader))
+            df2 = pd.json_normalize(yaml.safe_load(f))
+            #df2 = pd.json_normalize(yaml.load(f, Loader=yaml.FullLoader))
             
         for row_index in range(len(df)):
             add_project_slide(prs, df, row_index, df2)
@@ -102,7 +105,7 @@ def add_project_slide(prs, df, row_index, df2):
     p_name = df.iloc[row_index]['project_name'].rstrip('\n')
     p_priority = df.iloc[row_index]['priority']
     
-    p_stakeholder = df.iloc[row_index]['business_owner_stakeholders'].split('\n')
+    p_stakeholder = df.iloc[row_index]['stakeholders'].split('\n')
     p_stakeholder = list(filter(('').__ne__, p_stakeholder))
     
     p_manager = df.iloc[row_index]['delivery_manager'].replace(',', '\n').split('\n')
@@ -154,7 +157,7 @@ def add_project_slide(prs, df, row_index, df2):
     if len(rnr)>0:
         if rnr['project_name'][0] == '#Security-Privacy-Champion': 
             add_table(shapes, rnr, blue1, top=Inches(2.0))
-        elif rnr['project_name'][0] == 'GlassWall Resources':
+        elif rnr['project_name'][0] == 'GlassWall':
             rnr1 = rnr.iloc[:9]
             rnr2 = rnr.iloc[9:,:].reset_index()
             
@@ -236,7 +239,7 @@ def add_table(shapes, df, table_color, top=Inches(3.5), col_width=Inches(4.0), l
         text_settings(cell, aligment=PP_ALIGN.CENTER)
         set_cell_border(cell, blue2, white)
                      
-        table.cell(i, 1).text = df['responsibility_for_the_project'][i-1] 
+        table.cell(i, 1).text = df['responsibility'][i-1] 
         
         cell = table.cell(i, 1)
         fill(cell, blue2)    
