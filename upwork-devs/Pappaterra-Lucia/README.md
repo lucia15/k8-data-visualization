@@ -9,7 +9,9 @@
 ## Pull Request Report
 
 Create a Pull Request report for all current projects by running PR_report.ipynb
-jupyter-notebook. Name, link, reviewers and creation date of each PR are listed.
+jupyter-notebook. Name, link, reviewers, labels and creation date of each PR are listed.
+
+Don't forget to add your credential information on the config.json file!
 
 <a id="generate-files"></a>
 ## Generate Files needed for Visualizations and Presentations
