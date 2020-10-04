@@ -1,6 +1,7 @@
 import json
 import requests
 import sys
+import pandas as pd
 
 class gitPulls ():
 
@@ -10,44 +11,75 @@ class gitPulls ():
             data = json.load(f)
 
         self.repositories = data["repos"]
-        #self.username = data["gituser"]
-        #self.token = data ["token"]
+        self.username = data["gituser"]
+        self.token = data ["token"]
         self.url = data["url"]
 
     def getPullRequests (self):
+    
+        d = []
 
         for repo in self.repositories:
-            print ("\nFetching pull requests from repo " + repo)
-
-            temp_url = self.url + repo + "/pulls"
-            req = requests.get(temp_url)#, auth=(self.username, self.token))
-            data = req.json()
-
-            empty = True
+            #print ("\n:::::Fetching pull requests from " + repo)
 
             try:
-                for pullRequest in data:
-                    empty = False
-                    print("\nRepository Name: " + pullRequest["base"]["repo"]["name"])
-                    print("PR Link: " + pullRequest["html_url"])
+                temp_url = self.url + repo + "/pulls"
+                req = requests.get(temp_url, auth=(self.username, self.token))
+                data = req.json()
 
-                    all_reviewers = ""
-                    for reviewer in pullRequest["requested_reviewers"]:
-                        all_reviewers += reviewer["login"] + ", "
+                try:
+                    print("Error! A message from github server: \n" + data["message"])
+                    break
+                except:
+                    #print("Success!")
+                    empty = True
+                    counter = 0
 
-                    if (all_reviewers == ""):
-                        all_reviewers = "not assigned"
-                    else:
-                        all_reviewers = all_reviewers[:-2]
+                    for pullRequest in data:
+                    
+                        link = pullRequest["html_url"]
+                        name = pullRequest["base"]["repo"]["name"]
+                        date = str(pullRequest["created_at"])
 
-                    print("Reviewer(s): " + all_reviewers)
-                    print("Date Created: " + str(pullRequest["created_at"]))
+                        empty = False
+                        counter = counter + 1
+                        #print("\n:" + str(counter))
+                        #print("PR Link: " + link)
 
-                if (empty):
-                    print("There are no pull requests in " + repo)
+                        #print("Repository Name: " + name)
+
+                        all_reviewers = ""
+                        for reviewer in pullRequest["requested_reviewers"]:
+                            all_reviewers += reviewer["login"] + ", "
+
+                        if (all_reviewers == ""):
+                            all_reviewers = "not assigned"
+                        else:
+                            all_reviewers = all_reviewers[:-2]                            
+                            
+                        all_labels = ""
+                        for label in pullRequest["labels"]:
+                            all_labels += label["name"] + ", "
+
+                        if (all_labels == ""):
+                            all_labels = "none"
+                        else:
+                            all_labels = all_labels[:-2]    
+                                     
+                        #print("Reviewer(s): " + all_reviewers)
+                        #print("Label(s): " + all_labels)
+                        #print("Date Created: " + date)
+                        
+                        d.append([name, link, all_reviewers, all_labels, date])
+
+                    if (empty):
+                        #print("\n:0")
+                        print("\nThere are no pull requests in " + repo)
 
             except:
-                print("Unexpected error:", sys.exc_info()[0])
+                print("\nUnexpected error: ", sys.exc_info()[0])
 
-gp = gitPulls("modules/config.json")
-gp.getPullRequests()
+        df = pd.DataFrame(d, columns=['Repository Name', 'PR Link', 'Reviewer(s)', 'Label(s)','Date Created'])
+    
+        return df
+                
