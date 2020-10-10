@@ -59,14 +59,7 @@ def show_table():
     peer                  = peer.rename({'Peer Review':'number'}, axis=1)
     peer['Peer Review']   = 'Peer Review'
     
-    gw                    = df[df.columns[pd.Series(df.columns).str.startswith('pipelines[4]')]]
-    gw                    = gw.transpose() 
-    gw.columns            = gw.iloc[0]
-    gw                    = gw[1:]
-    gw                    = gw.rename({'GW Team Review':'number'}, axis=1)
-    gw['GW Team Review']  = 'GW Team Review'
-    
-    dfv                   = pd.concat([new, bak, prog, peer, gw])
+    dfv                   = pd.concat([new, bak, prog, peer])
     df_merge              = pd.merge(dfn, dfv, on='number')
     df_merge              = df_merge.rename({'assignee.login':'Assigned'}, axis=1)
     df_merge              = df_merge.rename({'state':'Status'}, axis=1)

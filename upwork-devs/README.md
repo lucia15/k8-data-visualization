@@ -1,5 +1,86 @@
-# Visualisations
+# Repositories:
 
+- [Giuseppe Mazzacua](#giuseppe-mazzacua)
+- [Pappaterra Lucia](#pappaterra-lucia)
+- [Lwasampijja Baker](#lwasampijja-baker)
+- [Moses Mugo](#moses-mugo)
+
+
+<a id="giuseppe-mazzacua"></a>
+## Giuseppe Mazzacua
+
+Comming Soon
+
+
+
+
+
+<a id="pappaterra-lucia"></a>
+## Pappaterra Lucia
+
+- [1. Pull Request Report](#pull-request-report)
+- [2. Generate Files needed for Visualizations and Presentations](#generate-files)
+- [3. Organization Chart Visualization](#org-chart-visual)
+- [4. Make Power Point Presentation](#make-power-point)
+
+<a id="pull-request-report"></a>
+## 1. Pull Request Report
+
+Create a Pull Request report for all current projects by running PR_report.ipynb
+jupyter-notebook. Name, link, reviewers and creation date of each PR are listed.
+
+<a id="generate-files"></a>
+## 2. Generate Files needed for Visualizations and Presentations
+
+Before running next two notebooks, it's necessary to generate csv and yaml files 
+from the sheets in 
+
+https://docs.google.com/spreadsheets/d/1GCDWsyRc2CIkunovZ2-zZaqOdaienEBy/view
+
+that are constantly being updated. 
+
+To do so jupyter-notebook Generate_files.ipynb must be run.
+
+This generates the required files that will be saved in the folders *csv_files* 
+and *yaml_files* respectively, for later use in updated visualizations and power
+point presentations.
+
+
+<a id="org-chart-visual"></a>
+## 3. Organization Chart Visualization
+
+The jupyter-notebook Org_Chart_Vis.pynb generates visualizations from the 
+previously generated files.
+
+
+<a id="make-power-point"></a>
+## 4. Make Power Point Presentation
+
+The jupyter-notebook Make_PowerPoint_Presentation.pynb autocreate power point 
+presentation for 'Project Team Structure' sheet.
+
+
+## 5. Folders:
+
+- *modules* folder contains the codes that work behind notebooks
+
+- csv and yaml files are saved in *csv_files* and *yam_files* respectively, 
+these folders must be created locally since they may contain sensitive information
+
+- *images* folder contains images needed to make presentations
+
+- Easy to consume outputs are save in *outputs* folder
+
+
+<a id="lwasampijja-baker"></a>
+## Lwasampijja Baker
+
+- [1. Github Issue Visualisations](#git-issue-vis)
+- [2. Zenhub Pipeline Visualisations](#zen-pipe)
+- [3. Visualising Issues Accross Multiple Platforms](#vis-plat)
+
+
+<a id="git-issue-vis"></a>
 ## 1. Github Issue Visualisations
 This project is aimed at comming up with useful visuals and insights to the gitbub issues that are generated on different repositores.
 #### Files created
@@ -30,6 +111,7 @@ Generate a github token to be inserted into issues.py, line 19
 - issues.table_project_state() -> table showing number of open/closed issues per repo
 - issues.show_state_user() -> bar graph showing open/closed issues per user
 
+<a id="zen-pipe"></a>
 ## 2. Zenhub Pipeline Visualisations
 This section visualises the different pipelines setup within Zenhub to come up with this visualisation. 
 ![vis](https://user-images.githubusercontent.com/8102313/94304172-be78cb80-ff77-11ea-9577-9fb63011311d.png)
@@ -38,13 +120,53 @@ This section visualises the different pipelines setup within Zenhub to come up w
 
 #### Usage
 (i)  Import dependencies e.g from from zen_pipe import show_table
-
 (ii) Add github token, line 14
-
 (iii) Add zenhub token, line 15
-
 (iv) Add github repo code, line 16,17 as shown in the image below
-
 ![zen5](https://user-images.githubusercontent.com/8102313/94305687-419b2100-ff7a-11ea-9760-a29fa58ec800.png)
-
 (v) show_table(), displays the status table above.
+
+<a id="zen-pipe"></a>
+## 3. Visualising Issues Accross Multiple Platforms
+
+![plat](https://user-images.githubusercontent.com/8102313/94736551-18610300-0375-11eb-83d9-285577873479.png)
+
+The report is in a Google colab notebook and you will need to be invited by Gmail to have access. A preview of the code is available on github for review.
+
+#### File created
+- All Progress Issues.ipynb
+
+#### Usage
+(i)  On invite, got to the Runtime menu and select Run all, for an updated report.
+
+(ii) The last part of the report, has a filter section: To filter by person or repo, fill in the desired filter below. For example.
+
+(If my person of intrest is baker371, filter = "baker371". Note, the filter can take in multiple inputs e.g 
+
+filter = "baker371", "GiuseMSD" 
+
+The same principal applies even when searching for a particular repo e.g 
+
+filter = "k8-data-visualization"
+
+Now run the corresponding two code blocks.
+
+(iii) To export the filtered report to excel, run the last code block, open the folder to the left to download the csv file named report.csv.
+
+
+<a id="moses-mugo"></a>
+## Moses Mugo
+
+Run the command below to create and activate a virtual environment
+
+$python -m venv k8-venv`
+
+$source k8-venv/bin/activate`
+
+Run the command below to install dependencies
+
+$pip install -r requirements.txt
+
+main.py pulls all the pull requests and issues from all the repos and downloads them to data as a csv files
+
+
