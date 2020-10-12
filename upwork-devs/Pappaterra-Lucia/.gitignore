@@ -8,3 +8,5 @@
 *.pptx
 bar_plot.png
 pie_chart.png
+
+token.pickle
