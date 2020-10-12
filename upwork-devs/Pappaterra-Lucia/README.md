@@ -4,6 +4,7 @@
 - [Generate Files needed for Visualizations and Presentations](#generate-files)
 - [Organization Chart Visualization](#org-chart-visual)
 - [Make Power Point Presentation](#make-power-point)
+- [Daily Update](#daily-update)
 
 <a id="pull-request-report"></a>
 ## Pull Request Report
@@ -43,6 +44,12 @@ previously generated files.
 The jupyter-notebook Make_PowerPoint_Presentation.pynb autocreate power point 
 presentation for 'Project Team Structure' sheet.
 
+<a id="daily-update"></a>
+## Daily Update
+
+Run this jupyter-notebook to create Daily Report powerpoint presentation 
+with the information that Delivery Managers update every day about projects.
+
 
 ## Folders:
 
@@ -53,4 +60,5 @@ these folders must be created locally since they may contain sensitive informati
 
 - *images* folder contains images needed to make presentations
 
-- Easy to consume outputs are save in *outputs* folder
+- Easy to consume outputs are save in *outputs* folder. This folder must be created locally by user.
+Also create *single* folder inside this folder.
