@@ -42,7 +42,9 @@ previously generated files.
 ## Make Power Point Presentation
 
 The jupyter-notebook Make_PowerPoint_Presentation.pynb autocreate power point 
-presentation for 'Project Team Structure' sheet.
+presentation for 'Project Team Structure' sheet. 
+In addition to this presentation, it also create one powerpoint presentation 
+per project with a single slide each one. 
 
 <a id="daily-update"></a>
 ## Daily Update
