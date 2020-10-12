@@ -17,16 +17,13 @@ blue1 = RGBColor(22, 94, 122)
 # table colors:
 gray = RGBColor(191, 191, 191)
 blue2 = RGBColor(45, 92, 117)
-
+#rag colors:
+green = RGBColor(0, 204, 153) #(0, 255, 0)
+amber = RGBColor(255, 204, 0) #(255, 153, 51)
+red = RGBColor(255, 102, 102) #(255, 0, 0)
 
 # Letter font
-gw_font = 'Mediator Narrow'
-#gw_font = 'Asterisk Sans Pro Regular'
-#gw_font = 'Liberation Sans'
-#gw_font = 'Calibry' 
-#gw_font = 'Times New Roman'
-#gw_font = 'Atwic Regular Reversed'
-#gw_font = 'Umba Soft Alt Regular'
+gw_font = 'Lato'
 
 
 def examine_template():
@@ -43,25 +40,34 @@ def examine_template():
             print('%d, %s' % (shape.placeholder_format.idx, shape.name))
  
  
-def logo(slide, img_path='images/glasswall_logo.png', place='top'):
+def logo(slide, img_path='images/glasswall_logo.png', place='top right'):
    
-    if place == 'top':
+    if place == 'top right':
         # Logo size
         width = Inches(1.2)
         height = Inches(0.6) # width half
 
         # Place it on top right corner
         top = Inches(0.1) 
-        left = Inches(10) - width - Inches(0.2)
+        left = Inches(10.0) - width - Inches(0.2)
         
     elif place == 'center':
         # Logo size
-        width = Inches(6)
-        height = Inches(3) # width half
+        width = Inches(6.0)
+        height = Inches(3.0) # width halfs
 
         # Place it in the center
-        left = (Inches(10) - width)/2
+        left = (Inches(10.0) - width)/2
         top = (Inches(7.5) - height)/2
+        
+    elif place == 'top left':
+        # Logo size
+        width = Inches(1.8)
+        height = Inches(0.9) # width half
+
+        # Place it on top left corner
+        top = Inches(0.25) 
+        left = Inches(0.3) 
     
     pic = slide.shapes.add_picture(img_path, left, top, width, height) 
     
@@ -77,7 +83,7 @@ def fill(shape, fill_color=dark_blue):
     fill.fore_color.rgb = fill_color
                
     
-def make_presentation(sheet_name, output_to):
+def make_presentation(sheet_name, output_to, single=True):
 
     prs = Presentation()
 
@@ -88,22 +94,29 @@ def make_presentation(sheet_name, output_to):
         with open(os.path.join('yaml_files', sheet_name+'.yml'), 'r') as f:
             df = pd.json_normalize(yaml.safe_load(f))
             #df = pd.json_normalize(yaml.load(f, Loader=yaml.FullLoader))
-            
-        
+                    
         with open('yaml_files/Resource and responsability.yml', 'r') as f:
             df2 = pd.json_normalize(yaml.safe_load(f))
             #df2 = pd.json_normalize(yaml.load(f, Loader=yaml.FullLoader))
             
         for row_index in range(len(df)):
             add_project_slide(prs, df, row_index, df2)
+            
+            if single:           
+                # Also save single presentations to single folder
+                prs2 = Presentation()           
+                add_project_slide(prs2, df, row_index, df2)
+                p_name = df.iloc[row_index]['project_name'].rstrip('\n') 
+                prs2.save('outputs/single/' + p_name + '.pptx')
 
     prs.save(output_to)
     
-    
+
 def add_project_slide(prs, df, row_index, df2):
 
     p_name = df.iloc[row_index]['project_name'].rstrip('\n')
     p_priority = df.iloc[row_index]['priority']
+    p_description = df.iloc[row_index]['short_project_description']
     
     p_stakeholder = df.iloc[row_index]['stakeholders'].split('\n')
     p_stakeholder = list(filter(('').__ne__, p_stakeholder))
@@ -112,7 +125,7 @@ def add_project_slide(prs, df, row_index, df2):
     p_manager = list(filter(('').__ne__, p_manager))
     
     p_security = df.iloc[row_index]['security_champ'].split('\n')
-    p_security = list(filter(('').__ne__, p_security))
+    p_security = list(filter(('').__ne__, p_security))  
 
     title_only_slide_layout = prs.slide_layouts[5]
     slide = prs.slides.add_slide(title_only_slide_layout)
@@ -134,11 +147,16 @@ def add_project_slide(prs, df, row_index, df2):
     elif '3' in p_priority:
         p = '3'
     
-    title.text = 'PROJECT: ' + p_name.upper() + '\n Priority: ' + p
+    title.text = '\n' + '\n PROJECT: ' + p_name.upper()  + '\n' + p_description + '\n Priority: ' + p
+    text_settings(title, i=0)
+    text_settings(title, i=1)
+    text_settings(title, i=2, font_size=Pt(26))
     
-    text_settings(title, i=0, font_size=Pt(24))    
-    text_settings(title, i=1, font_size=Pt(22), font_color=green_blue)
-
+    description_font = Pt(12)
+    if len(p_description)>400: description_font = Pt(10)    
+    text_settings(title, i=3, font_size=description_font)
+    
+    text_settings(title, i=4, font_size=Pt(24), font_color=green_blue)
 
     # ROW OF RECTANGLES
 
@@ -167,9 +185,9 @@ def add_project_slide(prs, df, row_index, df2):
             add_table(shapes, rnr, blue1)
             
             
-def text_settings(shape, i=0, aligment=PP_ALIGN.LEFT, font_color=white, font_size=Pt(12), font=gw_font, bold=False):
+def text_settings(shape, i=0, alignment=PP_ALIGN.LEFT, font_color=white, font_size=Pt(14), font=gw_font, bold=False):
     text = shape.text_frame.paragraphs[i]
-    text.alignment = aligment
+    text.alignment = alignment
     text.font.name = font
     text.font.size = font_size
     text.font.color.rgb = font_color
@@ -185,7 +203,7 @@ def add_rectangle(shapes, names, rol, fill_color, font_color, left, width=Inches
             sentence = sentence + '\n' + names[i]      
         sentence = sentence
         
-        top = Inches(2.25)    
+        top = Inches(2.65)    
         height = Inches(0.65)    
         if n>1:
             top -= Inches(n*0.15)
@@ -194,8 +212,8 @@ def add_rectangle(shapes, names, rol, fill_color, font_color, left, width=Inches
         shape = shapes.add_shape(MSO_SHAPE.RECTANGLE, left, top, width, height)
         shape.text = sentence
 
-        for i in range(n):
-            text_settings(shape, i, PP_ALIGN.CENTER, font_size=Pt(14))
+        for i in range(0, n):
+            text_settings(shape, i, PP_ALIGN.CENTER, font_size=Pt(16))
                   
         fill(shape)
         
@@ -206,7 +224,7 @@ def add_rectangle(shapes, names, rol, fill_color, font_color, left, width=Inches
         shape = shapes.add_shape(MSO_SHAPE.RECTANGLE, left+Inches(0.25), top-Inches(0.25), width-Inches(0.5), height=Inches(0.4))
         shape.text = rol.upper()
                 
-        text_settings(shape, aligment=PP_ALIGN.CENTER, font_color=font_color)
+        text_settings(shape, alignment=PP_ALIGN.CENTER, font_color=font_color, font_size=Pt(12))
         
         fill(shape, fill_color)
         
@@ -214,7 +232,7 @@ def add_rectangle(shapes, names, rol, fill_color, font_color, left, width=Inches
         line.color.rgb = fill_color
     
     
-def add_table(shapes, df, table_color, top=Inches(3.5), col_width=Inches(4.0), left=Inches(1.0), width=Inches(6.0), height=Inches(0.8)):
+def add_table(shapes, df, table_color, top=Inches(3.65), col_width=Inches(4.0), left=Inches(1.0), width=Inches(6.0), height=Inches(0.8)):
              
      cols = 2
      rows = len(df)+1
@@ -236,25 +254,25 @@ def add_table(shapes, df, table_color, top=Inches(3.5), col_width=Inches(4.0), l
         
         cell = table.cell(i, 0)
         fill(cell, blue2)
-        text_settings(cell, aligment=PP_ALIGN.CENTER)
+        text_settings(cell, alignment=PP_ALIGN.CENTER)
         set_cell_border(cell, blue2, white)
                      
         table.cell(i, 1).text = df['responsibility'][i-1] 
         
         cell = table.cell(i, 1)
         fill(cell, blue2)    
-        text_settings(cell, aligment=PP_ALIGN.CENTER)
+        text_settings(cell, alignment=PP_ALIGN.CENTER)
         set_cell_border(cell, blue2, white)
         
      # set headings color and font
      cell = table.cell(0, 0)
      fill(cell, gray)   
-     text_settings(cell, aligment=PP_ALIGN.CENTER, font_color=blue2, bold=True)    
+     text_settings(cell, alignment=PP_ALIGN.CENTER, font_color=blue2, bold=True)    
      set_cell_border(cell, gray, gray)
     
      cell = table.cell(0, 1)
      fill(cell, gray)    
-     text_settings(cell, aligment=PP_ALIGN.CENTER, font_color=blue2, bold=True)    
+     text_settings(cell, alignment=PP_ALIGN.CENTER, font_color=blue2, bold=True)    
      set_cell_border(cell, gray, gray)
         
 
@@ -287,3 +305,153 @@ def set_cell_border(cell, border_color_LR, border_color_TB, border_width='12700'
         headEnd = SubElement(ln, 'a:headEnd', type='none', w='med', len='med')
         tailEnd = SubElement(ln, 'a:tailEnd', type='none', w='med', len='med') 
         
+        
+def daily_presentation(df, output_to):
+
+    prs = Presentation()
+    
+    for row_index in range(len(df)):
+        add_slide(prs, df, row_index)
+
+    prs.save(output_to)
+    
+    
+def add_slide(prs, df, row_index):
+
+    # Project information
+    priority = df.iloc[row_index]['Priority']
+    service_name = df.iloc[row_index]['Service Name']
+    date = df.iloc[row_index]['Timestamp']
+    p_name = df.iloc[row_index]['Project']
+    d_manager = df.iloc[row_index]['Delivery Manager']
+    onboarding = df.iloc[row_index]['Onboarding']
+    offboarding = df.iloc[row_index]['Offboarding']
+    in_progress = df.iloc[row_index]['Issues in progress']
+    closed = df.iloc[row_index]['Closed issues']
+    major_issues = df.iloc[row_index]['Major issues'] 
+    rag_status = df.iloc[row_index]['RAG Status']
+    team = df.iloc[row_index]['Team members']
+    next_release = df.iloc[row_index]['Next Release/ Important dates']
+    comments = df.iloc[row_index]['If you have any more comments']
+    
+    if rag_status == 'Green':
+        rgb_color = green
+    elif rag_status == 'Red':
+        rgb_color = red
+    elif rag_status == 'Amber':
+        rgb_color = amber
+
+    #slide
+    title_only_slide_layout = prs.slide_layouts[5]
+    slide = prs.slides.add_slide(title_only_slide_layout)
+        
+    logo(slide, img_path='images/glasswall_logo2.png', place='top left')
+    
+    shapes = slide.shapes
+    
+    # TITLE
+    title = shapes.title
+    
+    title.text = 'DAILY PROJECT REPORT'
+    text_settings(title, i=0, alignment=PP_ALIGN.CENTER, font_size=Pt(24), font_color=dark_blue, bold=True)    
+    
+    left = Inches(0.35) #1.25, 1.1, 0.8, 0.65, 0.35
+    top = Inches(1.4)
+    width0 = (Inches(10.0) - 2*left)/6
+    height = Inches(0.3)   
+    
+    # First line
+    make_rectangle(shapes, 'Priority:', left, top, width0, height) 
+    make_rectangle(shapes, priority, left + width0, top, width0, height, font_color=dark_blue, fill_color=white, line_color=gray, alignment=PP_ALIGN.CENTER, bold=True)
+    
+    make_rectangle(shapes, 'RAG Status:', left + 2*width0, top, width0, height)     
+    make_rectangle(shapes, rag_status, left + 3*width0, top, width0, height, font_color=dark_blue, fill_color=rgb_color, line_color=rgb_color, alignment=PP_ALIGN.CENTER, bold=True)
+    
+    make_rectangle(shapes, 'Date:', left + 4*width0, top, width0, height) 
+    make_rectangle(shapes, date, left + 5*width0, top, width0, height, font_color=dark_blue, fill_color=white, line_color=gray)
+    
+    # Next line
+    sep = Inches(0.1)
+    top = top + height + sep
+    width1 = Inches(2.5)
+    left1 = left + width1    
+    width2 = Inches(10.0) - 2*left - width1
+    
+    make_rectangle(shapes, 'Project name:', left, top, width1, height)
+    make_rectangle(shapes, p_name, left1, top, width2, height, font_color=dark_blue, fill_color=white, line_color=gray)
+    
+    # Next line 
+    top = top + height + sep
+    
+    make_rectangle(shapes, 'DM:', left, top, width1, height)  
+    make_rectangle(shapes, d_manager, left1, top, width2, height, font_color=dark_blue, fill_color=white, line_color=gray)
+    
+    # Next line
+    top = top + height + sep
+    
+    make_rectangle(shapes, 'Team:', left, top, width1, height) 
+    make_rectangle(shapes, team, left1, top, width2, height, font_color=dark_blue, fill_color=white, line_color=gray)
+    
+    # Next line
+    top = top + height + sep
+      
+    make_rectangle(shapes, 'Onboarding:', left, top, width1, height)
+    make_rectangle(shapes, onboarding, left1, top, width2, height, font_color=dark_blue, fill_color=white, line_color=gray) 
+    
+    # Next line
+    sep2 = Inches(0.03)
+    top = top + height + sep2
+         
+    make_rectangle(shapes, 'Offboarding:', left, top, width1, height) 
+    make_rectangle(shapes, offboarding, left1, top, width2, height, font_color=dark_blue, fill_color=white, line_color=gray)
+    
+    # Next line
+    top = top + height + sep
+    width3 = Inches(10.0) - 2*left 
+    
+    make_rectangle(shapes, 'Issues', left, top, width3, height, alignment=PP_ALIGN.CENTER)
+    
+    # Next line
+    top = top + height + sep2
+    width4 = width3/3
+    
+    make_rectangle(shapes, 'In progress', left, top, width4, height, alignment=PP_ALIGN.CENTER)
+    make_rectangle(shapes, 'Closed', left + width4, top, width4, height, alignment=PP_ALIGN.CENTER)
+    make_rectangle(shapes, 'Major Issues', left + 2*width4, top, width4, height, alignment=PP_ALIGN.CENTER)
+    
+    # Next line
+    top = top + height + sep2
+    height1 = Inches(2.0)
+    
+    make_rectangle(shapes, in_progress, left, top, width4, height1, font_color=dark_blue, fill_color=white, line_color=gray)
+    make_rectangle(shapes, closed, left + width4, top, width4, height1, font_color=dark_blue, fill_color=white, line_color=gray)
+    make_rectangle(shapes, major_issues, left + 2*width4, top, width4, height1, font_color=dark_blue, fill_color=white, line_color=gray)
+    
+    # Next line
+    top = top + height1 + sep
+    
+    make_rectangle(shapes, 'Next Release:', left, top, width1, height) 
+    make_rectangle(shapes, next_release, left1, top, width2, height, font_color=dark_blue, fill_color=white, line_color=gray)
+        
+    # Next line
+    top = top + height + sep
+    
+    make_rectangle(shapes, 'Comments:', left, top, width1, height) 
+    make_rectangle(shapes, comments, left1, top, width2, height, font_color=dark_blue, fill_color=white, line_color=gray)
+    
+def make_rectangle(shapes, sentence, left, top, width, height, font_color=white, fill_color=dark_blue, line_color=dark_blue, alignment=PP_ALIGN.LEFT, bold=False, font_size=Pt(14)):
+    
+    shape = shapes.add_shape(MSO_SHAPE.RECTANGLE, left, top, width, height)
+    shape.text = sentence
+    
+    if len(shape.text)>350:
+        font_size=Pt(10)
+    elif len(shape.text)>200: 
+        font_size=Pt(13)    
+    
+    text_settings(shape, font_color=font_color, alignment=alignment, bold=bold, font_size=font_size)
+    
+    fill(shape, fill_color=fill_color)
+    line = shape.line
+    line.color.rgb = line_color
+       
