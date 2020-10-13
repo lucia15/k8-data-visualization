@@ -4,16 +4,17 @@ from models import config
 
 
 class Issues:
-    github_api = "https://api.github.com"
+    github_api = "https://api.github.com/repos/"
     gh_session = requests.Session()
     gh_session.auth = (config.GITHUB_USERNAME, config.GITHUB_TOKEN)
 
-    def __init__(self, repo):
+    def __init__(self, username, repo):
+        self.username = username
         self.repo = repo
         self.df = self.get_issues()
 
     def get_issues(self):
-        url = self.github_api + '/repos/k8-proxy/'+self.repo+'/issues'
+        url = self.github_api+self.username+'/'+self.repo+'/issues'
         try:
             issues = self.gh_session.get(url=url).json()
             if type(issues) == 'dict':
