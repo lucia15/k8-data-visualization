@@ -1,7 +1,7 @@
 import pandas as pd
-from models.pull_requests import PR
-from models.repos import Repos
-from models.issues import Issues
+from pull_requests import PR
+from repos import Repos
+from issues import Issues
 import warnings
 warnings.filterwarnings('ignore')
 

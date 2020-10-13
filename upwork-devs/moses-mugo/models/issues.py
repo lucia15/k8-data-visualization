@@ -1,6 +1,6 @@
 import pandas as pd
 import requests
-from models import config
+import config
 
 
 class Issues:
