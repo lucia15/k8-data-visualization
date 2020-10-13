@@ -72,9 +72,9 @@ class gitPulls ():
                         
                         d.append([name, link, all_reviewers, all_labels, date])
 
-                    if (empty):
+                    #if (empty):
                         #print("\n:0")
-                        print("\nThere are no pull requests in " + repo)
+                        #print("\nThere are no pull requests in " + repo)
 
             except:
                 print("\nUnexpected error: ", sys.exc_info()[0])

@@ -57,7 +57,7 @@ def xlsx_to_csv(xlsxfile, sheetname):
         data.dropna(how='all', inplace=True) 
         
         for col in data.columns:
-            if col != 'Stakeholders':
+            if col not in ['Stakeholders', 'Delivery Manager', 'Security Champ'] :
                 data[col] = data[col].apply(lambda s: s.replace('\n', '') if isinstance(s, str) else s)
     
     elif sheetname == 'Skills Matrix':
