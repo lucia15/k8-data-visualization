@@ -1,25 +1,40 @@
 import requests
 import json
+import os
+import numpy as np
 import pandas as pd 
 from pandas import json_normalize
-import matplotlib.pyplot as plt
 import seaborn as sns
+import matplotlib.pyplot as plt
+import datetime as dt 
+import datetime
 
 import warnings
 warnings.filterwarnings('ignore')
+
+class Repos:
+    def get_repos():
+        resn                = requests.get("https://api.github.com/users/k8-proxy/repos").json()
+        arep                = json_normalize(resn, max_level=1)
+        dfn                 = arep[['id','name']]
+        dfn['lis']          = list(zip(dfn.name,dfn.id))
+        myrepos             = list(dfn['lis'])
+        return myrepos
+        
 
 class Issues:
 
     def __init__(self, repos):
         self.repos          = repos
-        git_token           = 'TOKEN'
+        git_token           = ''
         self.git_headers    = {'Authorization': f'token {git_token}'}
-        zen_token           = 'TOKEN'
+        zen_token           = ''
         self.zen_headers    = {'X-Authentication-token': zen_token}
         self.zen_ws_id      = '5f43aa60e9220900139f4fb3'
         self.configure_pandas()
-        self.df         = self.init_df()
-
+        self.df             = self.init_df()
+        
+    
     def init_df(self):
         try:
             dfs         = []
@@ -93,19 +108,49 @@ class Issues:
         plt.xticks(keys)
         plt.grid  ()
         plt.show  ()
+        
+    
 
     def show_bar_chart_by_user(self):
         df        = self.df
         user      = df.groupby('user.login')
         response  = user.count()['created_at']
         keys      = [pair for pair, df in user]
-        plt.figure(figsize = (10,10))
+        plt.figure(figsize = (15,10))
         plt.bar   (keys, response)
         plt.xticks(keys, rotation='vertical', size=8)
         plt.ylabel('Number of Issues')
         plt.xlabel('Users')
         plt.show()       
-         
+    
+    def table_project_state(self):
+        table = self.df.groupby('repo')['state'].value_counts().unstack().fillna(0)
+        print(table)
+
+    def table_user_state(self):
+        table = self.df.groupby(['user.login','created_at']).sum()
+        print(table)     
+        
+    def show_state_repo(self):
+        df          = self.df
+        plt.figure(figsize=(40,15))
+        chart = sns.countplot(
+        data = df,x = 'created_at',order = df['created_at'].value_counts().iloc[:30].index)
+        chart.set_xticklabels(chart.get_xticklabels(), rotation=45, horizontalalignment='right')
+        plt.title("Graph Showing Opened Issues By Date")
+        
+    def show_state_user(self):
+        df          = self.df
+        plt.figure(figsize=(15,10))
+        sns.catplot(y="user.login", hue="state", kind="count",palette="pastel", edgecolor=".6", data=df, height=10);
+        plt.title("Pie Chart Showing Open Vs. Closed Issues")
+        
+    def show_pie_association(self):  
+        df          = self.df
+        plt.figure(figsize=(15,10))
+        df['author_association'].value_counts().plot(kind='pie',explode = (0.1 , 0.1, 0),startangle = 90,autopct='%.2f%%')
+        plt.show()
+    
 
     def show_tabular_report_by_repo(self):
         df          = self.df
@@ -118,3 +163,5 @@ class Issues:
         user        = df.groupby(['assignee.login', 'pipeline'])
         pipe_df      = user['title'].count().unstack(-1, 0)
         return pipe_df
+        
+        
