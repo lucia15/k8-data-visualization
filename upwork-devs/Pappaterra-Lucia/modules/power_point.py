@@ -334,6 +334,10 @@ def add_slide(prs, df, row_index):
     next_release = df.iloc[row_index]['Next Release/ Important dates']
     comments = df.iloc[row_index]['If you have any more comments']
     
+    if len(next_release)>200 and comments == '':
+        comments = next_release[len(next_release)//2:]
+        next_release = next_release[:len(next_release)//2]
+    
     if rag_status == 'Green':
         rgb_color = green
     elif rag_status == 'Red':
@@ -438,16 +442,23 @@ def add_slide(prs, df, row_index):
     
     make_rectangle(shapes, 'Comments:', left, top, width1, height) 
     make_rectangle(shapes, comments, left1, top, width2, height, font_color=dark_blue, fill_color=white, line_color=gray)
+
     
 def make_rectangle(shapes, sentence, left, top, width, height, font_color=white, fill_color=dark_blue, line_color=dark_blue, alignment=PP_ALIGN.LEFT, bold=False, font_size=Pt(14)):
     
     shape = shapes.add_shape(MSO_SHAPE.RECTANGLE, left, top, width, height)
     shape.text = sentence
     
-    if len(shape.text)>350:
-        font_size=Pt(10)
-    elif len(shape.text)>200: 
-        font_size=Pt(13)    
+    if height >= Inches(2.0):
+        if len(shape.text)>550:
+            font_size=Pt(8)  
+        elif len(shape.text)>=340:
+            font_size=Pt(11)
+        elif len(shape.text)>200: 
+            font_size=Pt(13)
+    else: 
+        if len(shape.text)>80:
+            font_size=Pt(10)   
     
     text_settings(shape, font_color=font_color, alignment=alignment, bold=bold, font_size=font_size)
     
