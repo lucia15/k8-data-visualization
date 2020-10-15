@@ -1,7 +1,7 @@
 import pandas as pd
-from .pull_requests import PR
-from .repos import Repos
-from .issues import Issues
+from pull_requests import PR
+from repos import Repos
+from issues import Issues
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -10,7 +10,7 @@ def transform_pr():
     data = pd.DataFrame()
     repos = Repos('k8-proxy').list_repos()
     for i in range(0, len(repos)):
-        data = pd.concat([data, PR(repos[i]).get_prs()], ignore_index=True)
+        data = pd.concat([data, PR('k8-proxy', repos[i]).get_prs()], ignore_index=True)
     data.user = pd.json_normalize(data.user).login
     df = data.copy()
     df = df[['id','url', 'node_id', 'user', 'issue_url', 'number', 'state',
@@ -37,7 +37,7 @@ def transform_issues():
     data = pd.DataFrame()
     repos = Repos('k8-proxy').list_repos()
     for i in range(0, len(repos)):
-        data = pd.concat([data, Issues(repos[i]).get_issues()], ignore_index=True)
+        data = pd.concat([data, Issues('k8-proxy', repos[i]).get_issues()], ignore_index=True)
     data = data.drop(['labels_url', 'repository_url', 'locked', 'comments_url', 'performed_via_github_app',
                       'events_url', 'html_url', 'labels', 'assignee', 'milestone'], 1)
     data.user = pd.json_normalize(data.user).login
@@ -57,9 +57,9 @@ def transform_issues():
         else:
             data['pr'][i] = data.pull_request[i]['url']
     data = data.drop(['assignees', 'pull_request'], 1)
-    data = data.rename(columns = {"user": "user_", "pr":"pull_request"})
+    data = data.rename(columns={"user": "user_", "pr": "pull_request"})
     data = data[['title', 'state', 'url', 'repo', 'user_', 'author_association',
                  'assignee', 'created_at', 'updated_at', 'closed_at', 'number',
-                 'comments', 'node_id', 'id', 'active_lock_reason','pull_request']]
+                 'comments', 'node_id', 'id', 'active_lock_reason', 'pull_request']]
     issues_df = data.copy()
     return issues_df

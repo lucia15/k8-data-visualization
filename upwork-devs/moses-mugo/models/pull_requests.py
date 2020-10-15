@@ -1,18 +1,20 @@
 import pandas as pd
 import requests
-from models import config
+import config
 
 
 class PR:
-    def __init__(self, repo):
+    github_api = "https://api.github.com/repos/"
+    gh_session = requests.Session()
+    gh_session.auth = (config.GITHUB_USERNAME, config.GITHUB_TOKEN)
+
+    def __init__(self, username, repo):
+        self.username = username
         self.repo = repo
-        self.github_api = "https://api.github.com"
-        self.gh_session = requests.Session()
-        self.gh_session.auth = (config.GITHUB_USERNAME, config.GITHUB_TOKEN)
         self.df = self.get_prs()
 
     def get_prs(self):
-        url = self.github_api + '/repos/k8-proxy/'+self.repo+'/pulls'
+        url = self.github_api+self.username+'/'+self.repo+'/pulls'
         try:
             pr = pd.DataFrame(self.gh_session.get(url=url).json())
             return pr
