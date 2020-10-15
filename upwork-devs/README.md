@@ -1,18 +1,7 @@
 # Repositories:
-
-- [Giuseppe Mazzacua](#giuseppe-mazzacua)
 - [Pappaterra Lucia](#pappaterra-lucia)
 - [Lwasampijja Baker](#lwasampijja-baker)
 - [Moses Mugo](#moses-mugo)
-
-
-<a id="giuseppe-mazzacua"></a>
-## Giuseppe Mazzacua
-
-Comming Soon
-
-
-
 
 
 <a id="pappaterra-lucia"></a>
@@ -119,12 +108,13 @@ This section visualises the different pipelines setup within Zenhub to come up w
 - zen_pipe.py
 
 #### Usage
-(i)  Import dependencies e.g from from zen_pipe import show_table
-(ii) Add github token, line 14
-(iii) Add zenhub token, line 15
-(iv) Add github repo code, line 16,17 as shown in the image below
+(i)   pip install flatjson
+(ii)  Import dependencies e.g from from zen_pipe import show_table
+(iii) Add github token, line 14
+(iv) Add zenhub token, line 15
+(v) Add github repo code, line 16,17 as shown in the image below
 ![zen5](https://user-images.githubusercontent.com/8102313/94305687-419b2100-ff7a-11ea-9760-a29fa58ec800.png)
-(v) show_table(), displays the status table above.
+(vi) show_table(), displays the status table above.
 
 <a id="zen-pipe"></a>
 ## 3. Visualising Issues Accross Multiple Platforms
