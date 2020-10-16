@@ -105,16 +105,13 @@ Generate a github token to be inserted into issues.py, line 19
 This section visualises the different pipelines setup within Zenhub to come up with this visualisation. 
 ![vis](https://user-images.githubusercontent.com/8102313/94304172-be78cb80-ff77-11ea-9577-9fb63011311d.png)
 #### Files created
-- zen_pipe.py
+- issues.py
+- Visualise_Zenhub_Pipelines.ipynb
 
 #### Usage
-(i)   pip install flatjson
-(ii)  Import dependencies e.g from from zen_pipe import show_table
-(iii) Add github token, line 14
-(iv) Add zenhub token, line 15
-(v) Add github repo code, line 16,17 as shown in the image below
-![zen5](https://user-images.githubusercontent.com/8102313/94305687-419b2100-ff7a-11ea-9760-a29fa58ec800.png)
-(vi) show_table(), displays the status table above.
+(i)  Import dependencies e.g from from issues import *
+(ii) Show tables as indicated in Visualise_Zenhub_Pipelines.ipynb
+
 
 <a id="zen-pipe"></a>
 ## 3. Visualising Issues Accross Multiple Platforms
@@ -129,7 +126,7 @@ The report is in a Google colab notebook and you will need to be invited by Gmai
 #### Usage
 (i)  On invite, got to the Runtime menu and select Run all, for an updated report.
 
-(ii) The last part of the report, has a filter section: To filter by person or repo, fill in the desired filter below. For example.
+(ii) To filter, click on filter on top of the table to fiter for the required field accordingly. The last part of the report, has a multiple filter section: To filter by person or repo, fill in the desired filter below. For example.
 
 (If my person of intrest is baker371, filter = "baker371". Note, the filter can take in multiple inputs e.g 
 
