@@ -4,6 +4,12 @@ import matplotlib.pyplot as plt
 from graphviz import Digraph
 
 
+# Include this path if working in Google Colab    
+#d = '/content/gdrive/My Drive/p2-p-data-visualization-Pappaterra-Lucia/'
+# If not 
+d = ''
+
+
 # Colors
 color_set = [plt.cm.tab20(0), plt.cm.tab20(2), plt.cm.tab20(4), plt.cm.tab20(6), 
     plt.cm.tab20(8), plt.cm.tab20(10), plt.cm.tab20(12), plt.cm.tab20(14), 
@@ -60,7 +66,7 @@ def graph(df, df2):
                     g.edge(elem, rnr)
     
     # save graph to pdf                
-    g.render('outputs/teams_graph.gv', view=True)   
+    g.render(d+'outputs/teams_graph.gv', view=True)   
     return g
     
 
@@ -95,7 +101,7 @@ def bar_plot(df, df2, colors=color_set):
     
     plt.title('Amount of resources per project', fontsize=20)
     plt.xticks(rotation=90)
-    plt.savefig('outputs/bar_plot.png' , format='png', bbox_inches = 'tight')  
+    plt.savefig(d+'outputs/bar_plot.png' , format='png', bbox_inches = 'tight')  
     plt.show()
 
 
@@ -191,7 +197,7 @@ def pie_chart(df, df2, colors=color_set):
  
     plt.margins(0,0)  
     
-    plt.savefig('outputs/pie_chart.png' , format='png', bbox_inches = 'tight')  
+    plt.savefig(d+'outputs/pie_chart.png' , format='png', bbox_inches = 'tight')  
 
     # show it
     plt.show() 

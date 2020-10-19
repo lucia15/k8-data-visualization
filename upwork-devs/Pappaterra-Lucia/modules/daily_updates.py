@@ -9,22 +9,28 @@ from datetime import datetime
 import re
 
 
+# Include this path if working in Google Colab    
+#d = '/content/gdrive/My Drive/p2-p-data-visualization-Pappaterra-Lucia/'
+# If not 
+d = ''
+
+
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 
 def gsheet_api_check(SCOPES):
     creds = None
-    if os.path.exists('token.pickle'):
-        with open('token.pickle', 'rb') as token:
+    if os.path.exists(d+'token.pickle'):
+        with open(d+'token.pickle', 'rb') as token:
             creds = pickle.load(token)
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'modules/credentials.json', SCOPES)
+                d+'modules/credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
-        with open('token.pickle', 'wb') as token:
+        with open(d+'token.pickle', 'wb') as token:
             pickle.dump(creds, token)
     return creds
     

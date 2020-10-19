@@ -9,6 +9,12 @@ from pptx.dml.color import RGBColor
 from pptx.oxml.xmlchemy import OxmlElement
 
 
+# Include this path if working in Google Colab    
+#d = '/content/gdrive/My Drive/p2-p-data-visualization-Pappaterra-Lucia/'
+# If not 
+d = ''
+
+
 # Glasswall palette
 dark_blue = RGBColor(14, 61, 90)
 green_blue = RGBColor(26, 145, 154) 
@@ -40,7 +46,7 @@ def examine_template():
             print('%d, %s' % (shape.placeholder_format.idx, shape.name))
  
  
-def logo(slide, img_path='images/glasswall_logo.png', place='top right'):
+def logo(slide, img_path=d+'images/glasswall_logo.png', place='top right'):
    
     if place == 'top right':
         # Logo size
@@ -87,7 +93,7 @@ def sheet_to_dfs(sheet_name):
 
     if sheet_name == 'Projects Team Structure':
     
-        with open(os.path.join('yaml_files', sheet_name+'.yml'), 'r') as f:
+        with open(os.path.join(d+'yaml_files', sheet_name+'.yml'), 'r') as f:
             df = pd.json_normalize(yaml.safe_load(f))
             #df = pd.json_normalize(yaml.load(f, Loader=yaml.FullLoader))
             
@@ -103,7 +109,7 @@ def sheet_to_dfs(sheet_name):
         
         df1 = df1.reset_index(drop=True)
                     
-        with open('yaml_files/Resource and responsability.yml', 'r') as f:
+        with open(d+'yaml_files/Resource and responsability.yml', 'r') as f:
             df2 = pd.json_normalize(yaml.safe_load(f))
             #df2 = pd.json_normalize(yaml.load(f, Loader=yaml.FullLoader))
             
@@ -127,7 +133,7 @@ def make_presentation(sheet_name, output_to, single=False, dm=False):
                 prs2 = Presentation()           
                 add_project_slide(prs2, df1, row_index, df2)
                 p_name = df1.iloc[row_index]['project_name'].rstrip('\n') 
-                prs2.save('outputs/single/' + p_name + '.pptx')
+                prs2.save(d+'outputs/single/' + p_name + '.pptx')
                 
         if dm:
             # Also create a presentation per delivery manager to dm folder       
@@ -147,7 +153,7 @@ def make_presentation(sheet_name, output_to, single=False, dm=False):
                 for row_index in range(len(df3)):
                     add_project_slide(prs3, df3, row_index, df2)
                        
-                prs3.save('outputs/DM/' + d_manager + '.pptx')
+                prs3.save(d+'outputs/DM/' + d_manager + '.pptx')
 
     prs.save(output_to)
  
@@ -397,7 +403,7 @@ def add_slide(prs, df, row_index):
     title_only_slide_layout = prs.slide_layouts[5]
     slide = prs.slides.add_slide(title_only_slide_layout)
         
-    logo(slide, img_path='images/glasswall_logo2.png', place='top left')
+    logo(slide, img_path=d+'images/glasswall_logo2.png', place='top left')
     
     shapes = slide.shapes
     

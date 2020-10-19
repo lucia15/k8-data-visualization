@@ -4,6 +4,12 @@ import csv
 import os
 
 
+# Include this path if working in Google Colab    
+#d = '/content/gdrive/My Drive/p2-p-data-visualization-Pappaterra-Lucia/'
+# If not 
+d = ''
+
+
 def xlsx_to_csv(xlsxfile, sheetname):
 
     data = pd.read_excel(xlsxfile, sheetname, index_col=None)   
@@ -44,7 +50,7 @@ def xlsx_to_csv(xlsxfile, sheetname):
         #data2['Responsability for the project'] = data2['Responsability for the project'].apply(lambda s: s.rstrip('\n').strip() if isinstance(s, str) else s)
         
         # save to csv file
-        data2.to_csv('csv_files/Resource and responsability.csv', index=False, encoding='utf-8')
+        data2.to_csv(d+'csv_files/Resource and responsability.csv', index=False, encoding='utf-8')
         ########################################################################
         
         data['Delivery Manager'] = data['Delivery Manager'].apply(lambda s: s.rstrip('\n').strip().replace('\n', ', ') if isinstance(s, str) else s)            
@@ -72,12 +78,12 @@ def xlsx_to_csv(xlsxfile, sheetname):
         data.columns = h1 + h2    
         data = data.iloc[7:]
               
-    data.to_csv(os.path.join('csv_files', sheetname+'.csv'), index=False, encoding='utf-8')
+    data.to_csv(os.path.join(d+'csv_files', sheetname+'.csv'), index=False, encoding='utf-8')
 
 
 def csv_to_yaml(filename):
 
-    csvfile = open(os.path.join('csv_files', filename+'.csv'), 'r')
+    csvfile = open(os.path.join(d+'csv_files', filename+'.csv'), 'r')
     datareader = csv.reader(csvfile, delimiter=",", quotechar='"')
     
     result = list()
@@ -110,6 +116,6 @@ def csv_to_yaml(filename):
                     is_array = (cell_index == type_index) and (cell == "array")
             result.append(content)
 
-    with open(os.path.join('yaml_files',filename+'.yml'), 'w') as f:
+    with open(os.path.join(d+'yaml_files',filename+'.yml'), 'w') as f:
         doc = yaml.dump(result, f) 
         
