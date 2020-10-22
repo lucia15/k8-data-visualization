@@ -1,6 +1,8 @@
 name: Label Maker
 
-on: [push]
+on:
+  schedule:
+    - cron: "*/60 * * **"
 
 jobs:
 
@@ -31,6 +33,5 @@ jobs:
       run: GO111MODULE=off go get github.com/k8-proxy/k8-data-visualization/labels
     
     - name: Apply Label
-      run: GITHUB_TOKEN=${{ secrets.OUR_SECRET }} github-labeller TeraTech-Uganda
-
+      run: GITHUB_TOKEN=${{ secrets.OUR_SECRET }} github-labeller k8-proxy
         
