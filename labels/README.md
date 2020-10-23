@@ -1,7 +1,7 @@
 # Label Synchronisation accross all repositores
 
 ### Usage (Automatic)
-The label synchronisation utilises a CI pipeline that runs every hour to look out for any new repositories and apply the labels.
+The label synchronisation utilises a CI pipeline (label_maker.yml) that runs every hour to look out for any new repositories and apply the labels.
 
 ### Usage (Manual)
 1. Install go, if you don't have it installed. Click [here] for directions.
