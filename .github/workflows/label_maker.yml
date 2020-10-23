@@ -2,7 +2,8 @@ name: Label Maker
 
 on:
   schedule:
-    - cron: "*/60 * * **"
+    - cron: '0 1-23 * * *'
+    - cron: '0 0 * * *'
 
 jobs:
 
