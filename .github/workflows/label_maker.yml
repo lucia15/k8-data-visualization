@@ -31,7 +31,7 @@ jobs:
       run: go build -v .
 
     - name: Import Label
-      run: GO111MODULE=off go get github.com/k8-proxy/k8-data-visualization/labels
+      run: GO111MODULE=off go get github.com/k8-proxy/k8-data-visualization/tree/master/labels
     
     - name: Apply Label
       run: GITHUB_TOKEN=${{ secrets.OUR_SECRET }} github-labeller k8-proxy
