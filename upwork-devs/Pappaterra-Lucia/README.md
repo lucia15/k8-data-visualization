@@ -44,7 +44,8 @@ previously generated files.
 The jupyter-notebook Make_PowerPoint_Presentation.pynb autocreate power point 
 presentation for 'Project Team Structure' sheet. 
 In addition to this presentation, it also create one powerpoint presentation 
-per project with a single slide each one. 
+per project with a single slide each one, and one presentation per delivery manager. 
+These presentations are saved in *outputs/single* and *outputs/DM* folders respectively.
 
 <a id="daily-update"></a>
 ## Daily Update
@@ -63,4 +64,4 @@ these folders must be created locally since they may contain sensitive informati
 - *images* folder contains images needed to make presentations
 
 - Easy to consume outputs are save in *outputs* folder. This folder must be created locally by user.
-Also create *single* folder inside this folder.
+Also create *single* and *DM* folder inside this folder.

@@ -9,22 +9,28 @@ from datetime import datetime
 import re
 
 
+# Include this path if working in Google Colab    
+#d = '/content/gdrive/My Drive/p2-p-data-visualization-Pappaterra-Lucia/'
+# If not 
+d = ''
+
+
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 
 def gsheet_api_check(SCOPES):
     creds = None
-    if os.path.exists('token.pickle'):
-        with open('token.pickle', 'rb') as token:
+    if os.path.exists(d+'token.pickle'):
+        with open(d+'token.pickle', 'rb') as token:
             creds = pickle.load(token)
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'modules/credentials.json', SCOPES)
+                d+'modules/credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
-        with open('token.pickle', 'wb') as token:
+        with open(d+'token.pickle', 'wb') as token:
             pickle.dump(creds, token)
     return creds
     
@@ -72,14 +78,16 @@ def sheet_to_df(data, date='today'):
     df.replace(float('NaN'), '', inplace=True)
     
     df['Team members'] = df['Team members'].apply(lambda s: remove_parenthesis(remove_chars(flat(s))) if isinstance(s, str) else s)
+    df['Onboarding'] = df['Onboarding'].apply(lambda s: remove_parenthesis(remove_chars(flat(s))) if isinstance(s, str) else s)
+    df['Offboarding'] = df['Offboarding'].apply(lambda s: remove_parenthesis(remove_chars(flat(s))) if isinstance(s, str) else s)
     
     for col in ['Issues in progress', 'Closed issues', 'Major issues']:
         df[col] = df[col].apply(lambda s: flat(s) if isinstance(s, str) else s)
     
     df['Next Release/ Important dates'] = df['Next Release/ Important dates'].apply(lambda s: s.replace('Release', '') if isinstance(s, str) else s)
 
-    df['Priority'] = pd.Categorical(df['Priority'], categories=['P1','P2','P3',''], ordered=True)
-                    
+    # sort by priority
+    df['Priority'] = pd.Categorical(df['Priority'], categories=['P1','P2','P3',''], ordered=True)                   
     df = df.sort_values('Priority')
 
     df = df.drop_duplicates(subset=['Project'], keep='last')
@@ -108,7 +116,7 @@ def remove_parenthesis(mystring):
     
 
 def remove_chars(mystring):
-    return mystring.replace('@', '').replace('-', '').replace('#', '').rstrip('\n')
+    return mystring.replace('@', '').replace('-', '').replace('#', '').replace('  ', ' ').rstrip('\n')
     
     
 def flat(mystring):
