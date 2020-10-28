@@ -8,7 +8,6 @@ from pptx.enum.text import PP_ALIGN
 from pptx.dml.color import RGBColor
 from pptx.oxml.xmlchemy import OxmlElement
 
-
 # Include this path if working in Google Colab    
 #d = '/content/gdrive/My Drive/p2-p-data-visualization-Pappaterra-Lucia/'
 # If not 
@@ -156,6 +155,10 @@ def make_presentation(sheet_name, output_to, single=False, dm=False):
                 prs3.save(d+'outputs/DM/' + d_manager + '.pptx')
 
     prs.save(output_to)
+    
+    # also save it as pdf
+    # import subprocess as sp
+    #sp.call(['libreoffice', '--headless', '--convert-to', 'pdf', output_to.split('/')[1]], cwd='outputs')
  
 
 def add_project_slide(prs, df, row_index, df2):
@@ -364,13 +367,17 @@ def daily_presentation(df, output_to):
 
     prs.save(output_to)
     
+    # also save it as pdf
+    #import subprocess as sp
+    #sp.call(['libreoffice', '--headless', '--convert-to', 'pdf', output_to.split('/')[1]], cwd='outputs')
+    
     
 def add_slide(prs, df, row_index):
 
     # Project information
     priority = df.iloc[row_index]['Priority']
     service_name = df.iloc[row_index]['Service Name']
-    date = df.iloc[row_index]['Timestamp']
+    date = df.iloc[row_index]['Date']
     p_name = df.iloc[row_index]['Project']
     d_manager = df.iloc[row_index]['Delivery Manager']
     onboarding = df.iloc[row_index]['Onboarding']
@@ -382,11 +389,9 @@ def add_slide(prs, df, row_index):
     team = df.iloc[row_index]['Team members']
     next_release = df.iloc[row_index]['Next Release/ Important dates']
     comments = df.iloc[row_index]['If you have any more comments']
-    
-    #b_owner =
-    #p_users =
-    #parent_service =
-    #service_manager =
+    parent_service = df.iloc[row_index]['Parent Service']
+    service_manager = df.iloc[row_index]['Service Manager']
+    service_name = df.iloc[row_index]['Service Name']
     
     if len(next_release)>250 and comments == '':
         comments = next_release[len(next_release)//2:]
@@ -410,8 +415,13 @@ def add_slide(prs, df, row_index):
     # TITLE
     title = shapes.title
     
-    title.text = 'DAILY PROJECT REPORT ' + date +'\n' + p_name + '\n\n'
-    text_settings(title, i=0, alignment=PP_ALIGN.CENTER, font_size=Pt(10), font_color=dark_blue, bold=True)  
+    if service_name != '':
+        project_name = service_name
+    else:
+        project_name = p_name   
+    
+    title.text = date +'\n' + project_name + '\n\n'
+    text_settings(title, i=0, alignment=PP_ALIGN.CENTER, font_size=Pt(12), font_color=dark_blue, bold=True)  
     text_settings(title, i=1, alignment=PP_ALIGN.CENTER, font_size=Pt(24), font_color=dark_blue, bold=True)    
     
     # FIGURES MEASURES:
@@ -440,7 +450,12 @@ def add_slide(prs, df, row_index):
     
     # heights:
     height0 = Inches(0.3) 
-    height1 = Inches(2.75)
+    height1 = Inches(2.95)
+    
+    # lefts:
+    left1 = left + width10  
+    left2 = left1 + width12
+    left3 = left1 + width12 + width10
     
     # separation between figures:
     sep0 = Inches(0.1)
@@ -458,15 +473,14 @@ def add_slide(prs, df, row_index):
     make_rectangle(shapes, rag_status, left_aux, top, width3, height0, font_color=dark_blue, fill_color=rgb_color, line_color=rgb_color, alignment=PP_ALIGN.CENTER, bold=True)
     
     left_aux = left_aux + width3
-    make_rectangle(shapes, 'Bussines Owner:', left_aux, top, width4, height0)
+    make_rectangle(shapes, 'Service Manager', left_aux, top, width4, height0)
     left_aux = left_aux + width4 
-    make_rectangle(shapes, '', left_aux, top, width5, height0, font_color=dark_blue, fill_color=white, line_color=gray)
-    
+    make_rectangle(shapes, service_manager, left_aux, top, width5, height0, font_color=dark_blue, fill_color=white, line_color=gray)
     
     # Next line
     top = top + height0 + sep0 
     
-    make_rectangle(shapes, 'Issues', left, top, width8, height0, alignment=PP_ALIGN.CENTER)
+    make_rectangle(shapes, 'Issues', left, top, width8, height0, alignment=PP_ALIGN.CENTER, fill_color=blue2)
     
     # Next line
     top = top + height0 + sep1    
@@ -478,23 +492,34 @@ def add_slide(prs, df, row_index):
     # Next line
     top = top + height0 + sep1
     
-    make_rectangle(shapes, in_progress, left, top, width9, height1, font_color=red, fill_color=white, line_color=gray)
-    make_rectangle(shapes, closed, left + width9, top, width9, height1, font_color=red, fill_color=white, line_color=gray)
-    make_rectangle(shapes, major_issues, left + 2*width9, top, width9, height1, font_color=red, fill_color=white, line_color=gray)
+    make_rectangle(shapes, in_progress, left, top, width9, height1, font_color=green_blue, bold=True, fill_color=white, line_color=gray)
+    make_rectangle(shapes, closed, left + width9, top, width9, height1, font_color=green_blue, bold=True, fill_color=white, line_color=gray)
+    make_rectangle(shapes, major_issues, left + 2*width9, top, width9, height1, font_color=green_blue, bold=True, fill_color=white, line_color=gray)
     
     # Next line
     top = top + height1 + sep0
-    
-    left1 = left + width10  
-    left2 = left1 + width12
-    left3 = left1 + width12 + width10
       
     make_rectangle(shapes, 'Delivery Manager:', left, top, width10, height0)
     make_rectangle(shapes, d_manager, left1, top, width12, height0, font_color=dark_blue, fill_color=white, line_color=gray) 
-         
-    make_rectangle(shapes, 'Project Users:', left2, top, width10, height0) 
-    make_rectangle(shapes, '', left3, top, width12, height0, font_color=dark_blue, fill_color=white, line_color=gray)
-      
+
+    make_rectangle(shapes, 'Parent Service:', left2, top, width10, height0) 
+    make_rectangle(shapes, parent_service, left3, top, width12, height0, font_color=dark_blue, fill_color=white, line_color=gray)    
+
+    # Next line 
+    top = top + height0 + sep0  
+
+    make_rectangle(shapes, 'Slack Channel:', left, top, width10, height0) 
+    
+    if ' ' not in p_name:
+        slack_channel = '#'+p_name
+    else:
+        slack_channel = ''
+    
+    make_rectangle(shapes, slack_channel, left1, top, width12, height0, font_color=dark_blue, fill_color=white, line_color=gray)
+    
+    make_rectangle(shapes, 'Next Release:', left2, top, width10, height0) 
+    make_rectangle(shapes, next_release, left3, top, width12, height0, font_color=green_blue, bold=True, fill_color=white, line_color=gray)
+  
     # Next line 
     top = top + height0 + sep0  
        
@@ -505,41 +530,26 @@ def add_slide(prs, df, row_index):
     top = top + height0 + sep0
     
     if onboarding == 'None':
-        color = dark_blue
+        color, b = dark_blue, False
     else:
-        color = red
+        color, b = green_blue, True
       
     make_rectangle(shapes, 'Onboarding:', left, top, width10, height0)  
-    make_rectangle(shapes, onboarding, left1, top, width12, height0, font_color=color, fill_color=white, line_color=gray) 
+    make_rectangle(shapes, onboarding, left1, top, width12, height0, font_color=color, bold=b, fill_color=white, line_color=gray) 
     
     if offboarding == 'None':
-        color = dark_blue
+        color, b = dark_blue, False
     else:
-        color = red
+        color, b = green_blue, True
          
     make_rectangle(shapes, 'Offboarding:', left2, top, width10, height0) 
-    make_rectangle(shapes, offboarding, left3, top, width12, height0, font_color=color, fill_color=white, line_color=gray)
-    
-    # Next line
-    top = top + height0 + sep0
-    
-    make_rectangle(shapes, 'Parent Service:', left, top, width10, height0)
-    make_rectangle(shapes, '', left1, top, width12, height0, font_color=dark_blue, fill_color=white, line_color=gray) 
-         
-    make_rectangle(shapes, 'Service Manager:', left2, top, width10, height0) 
-    make_rectangle(shapes, '', left3, top, width12, height0, font_color=dark_blue, fill_color=white, line_color=gray)
-    
-    # Next line
-    top = top + height0 + sep0
-    
-    make_rectangle(shapes, 'Next Release:', left, top, width10, height0) 
-    make_rectangle(shapes, next_release, left1, top, width11, height0, font_color=red, fill_color=white, line_color=gray)
+    make_rectangle(shapes, offboarding, left3, top, width12, height0, font_color=color, bold=b, fill_color=white, line_color=gray)
         
     # Next line
     top = top + height0 + sep0
     
     make_rectangle(shapes, 'Comments:', left, top, width10, height0) 
-    make_rectangle(shapes, comments, left1, top, width11, height0, font_color=red, fill_color=white, line_color=gray)
+    make_rectangle(shapes, comments, left1, top, width11, height0, font_color=green_blue, bold=True, fill_color=white, line_color=gray)
 
     
 def make_rectangle(shapes, sentence, left, top, width, height, font_color=white, fill_color=dark_blue, line_color=dark_blue, alignment=PP_ALIGN.LEFT, bold=False, font_size=Pt(14)):
@@ -549,13 +559,13 @@ def make_rectangle(shapes, sentence, left, top, width, height, font_color=white,
     
     if height >= Inches(2.0):
         if len(shape.text)>550:
-            font_size=Pt(9)          
+            font_size=Pt(10)          
         elif len(shape.text)>=500:  
-            font_size=Pt(10)
-        elif len(shape.text)>=350:
             font_size=Pt(11)
-        elif len(shape.text)>200: 
+        elif len(shape.text)>=350:
             font_size=Pt(12)
+        elif len(shape.text)>200: 
+            font_size=Pt(13)
     else: 
         if len(shape.text)>100:
             font_size=Pt(11)   
