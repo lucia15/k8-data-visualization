@@ -2,6 +2,7 @@ import pandas as pd
 import yaml
 import csv
 import os
+import re
 
 
 # Include this path if working in Google Colab    
@@ -20,43 +21,75 @@ def xlsx_to_csv(xlsxfile, sheetname):
         
     elif sheetname == 'Projects Team Structure':
     
-        data = data.rename(columns={'Business Owner\nStakeholders': 'Stakeholders', 'Responsibility for the project': 'Responsibility'})
+        data = data.rename(columns={'Business Owner\nStakeholders': 'Stakeholders'})
         
-        data['Project Name'] = data['Project Name'].apply(lambda s: s.replace('#', '') if isinstance(s, str) else s)
+        data['Slack Channel'] = data['Slack Channel'].apply(lambda s: s.replace('#', '') if isinstance(s, str) else s)
+        data['Slack Channel'] = data['Slack Channel'].apply(lambda s: '#'+s if isinstance(s, str) else s)
+        
+        data.dropna(subset = ['Project Name'], inplace=True)
+        
+        data['Project Name'] = data['Project Name'].apply(lambda s: s.rstrip('\n') if isinstance(s, str) else s)
+        
+        # consider only the projects that have some priority            
+        df = data[data['Priority']!='']
+        data = df[df['Priority']!=' ']
+        
+        # sort by priority
+        data['Priority'] = pd.Categorical(data['Priority'], categories=['One (1)','Two (2)','Three (3)'], ordered=True)            
+        data = data.sort_values('Priority')
+        
+        data = data.reset_index(drop=True)
         
         ############# Save Resource and Responsability separately ##############
         data2 = data.copy()
-        data2.drop(data2.columns.difference(['Project Name','Resource Name', 'Responsibility']), 1, inplace=True)
+        data2.drop(data2.columns.difference(['Project Name', 'Slack Channel', 'Delivery Manager', 'Resource Name']), 1, inplace=True)        
+        data2.replace(float("NaN"), '', inplace=True) 
+                
+        project_name = []
+        slack_channel = []
+        delivery_manager = []
+        resource_name = []
+        responsability = []
         
-        # drop empty rows
-        data2.replace('', float("NaN"), inplace=True)
-        data2.dropna(how='all', inplace=True) 
+        for index, row in data2.iterrows():   
         
-        data2['Project Name'] = data2['Project Name'].ffill()
-        data2['Project Name'] = data2['Project Name'].apply(lambda s: s.rstrip('\n') if isinstance(s, str) else s)
-                 
-        # dropping null value columns to avoid errors 
-        data2.dropna(inplace = True)
+            ll = row['Resource Name'].split('\n')
+  
+            for elem in ll:
+                project_name.append(row['Project Name'])
+                slack_channel.append(row['Slack Channel'])
+                delivery_manager.append(row['Delivery Manager'])
         
-        # replace '–' by '-'
-        data2['Resource Name'] = data2['Resource Name'].apply(lambda s: s.replace('–', '-') if isinstance(s, str) else s)
-        data2['Responsibility for the project'] = data2['Responsibility'].apply(lambda s: s.replace('–', '-') if isinstance(s, str) else s)
+                name = remove_parenthesis(elem).rstrip()
+                resource_name.append(name)
         
-        # drop responsability from name column
-        data2['Resource Name'] = data2['Resource Name'].apply(lambda s: s.split('-', 1)[0] if isinstance(s, str) else s)
+                respo = get_between_parenthesis(elem)
+                if len(respo)>0:
+                    respo = get_between_parenthesis(elem)[0]
+                else:
+                    respo=''
+                responsability.append(respo)
         
-        # delete spaces and line breaks
-        data2['Resource Name'] = data2['Resource Name'].apply(lambda s: s.rstrip('\n').strip() if isinstance(s, str) else s)    
-        #data2['Responsability for the project'] = data2['Responsability for the project'].apply(lambda s: s.rstrip('\n').strip() if isinstance(s, str) else s)
+        data3 = pd.DataFrame()
+        
+        data3['Project Name'] = project_name
+        data3['Slack Channel'] = slack_channel
+        data3['Delivery Manager'] = delivery_manager
+        data3['Resource Name'] = resource_name
+        data3['Resource Responsability'] = responsability
+        
+        data3.replace('', float("NaN"), inplace=True)
+        data3.dropna(axis=0, how='all', inplace=True)
+        data3.dropna(subset = ['Resource Name'], inplace=True)
+        data3.replace(float("NaN"), '', inplace=True)
         
         # save to csv file
-        data2.to_csv(d+'csv_files/Resource and responsability.csv', index=False, encoding='utf-8')
+        data3.to_csv(d+'csv_files/Resource and responsability.csv', index=False, encoding='utf-8')
         ########################################################################
         
         data['Delivery Manager'] = data['Delivery Manager'].apply(lambda s: s.rstrip('\n').strip().replace('\n', ', ') if isinstance(s, str) else s)            
         
         data = data.loc[:, ~data.columns.str.contains('Resource Name')]
-        data = data.loc[:, ~data.columns.str.contains('Responsibility')]
         
         # drop empty rows
         data.replace('', float("NaN"), inplace=True)
@@ -118,4 +151,27 @@ def csv_to_yaml(filename):
 
     with open(os.path.join(d+'yaml_files',filename+'.yml'), 'w') as f:
         doc = yaml.dump(result, f) 
+        
+
+def get_between_parenthesis(mystring):
+    """
+    Get text between parenthesis from string
+    Return a list with all string  between parenthesis
+    """ 
+    regex = re.compile(".*?\((.*?)\)")
+    text = re.findall(regex, mystring) 
+    return text
+  
+        
+def remove_parenthesis(mystring):
+    """
+    Delete substring between parenthesis from string
+    """
+    text = get_between_parenthesis(mystring)
+    
+    for i in range(len(text)):
+        substring = '('+text[i]+')'
+        mystring = mystring.replace(substring, '')
+
+    return mystring
         

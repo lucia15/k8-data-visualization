@@ -7,6 +7,7 @@ import pandas as pd
 import datetime as dt
 from datetime import datetime
 import re
+import calendar
 
 
 # Include this path if working in Google Colab    
@@ -59,7 +60,7 @@ def sheet_to_df(data, date='today'):
     if date == 'today':
         date = pd.to_datetime(date).strftime('%m/%d/%Y')
     
-    date = format_date(date)     
+    date = format_date(date)    
     
     # get previous day   
     day = datetime.strptime(date, '%m/%d/%Y')
@@ -67,8 +68,21 @@ def sheet_to_df(data, date='today'):
     previous_date = pd.to_datetime(previous_day).strftime('%m/%d/%Y')
     
     previous_date = format_date(previous_date)
+    
+    # get week day
+    w_d = day.weekday() 
+    week_day = calendar.day_name[w_d]
+    
+    # get month name
+    m = int(date.split('/')[0])
+    month_name = calendar.month_name[m]
+    
+    date_text = week_day + ', ' + date.split('/')[1] + ' ' + month_name
+    #date_text = week_day[:3] + ', ' + date.split('/')[1] + ' ' + month_name[:3]
         
     df = pd.DataFrame(data, columns=data[0])
+    
+    df = df.assign(Date=date_text)
     
     df['Timestamp'] = df['Timestamp'].apply(lambda s: s.split(' ')[0] if isinstance(s, str) else s)
 
