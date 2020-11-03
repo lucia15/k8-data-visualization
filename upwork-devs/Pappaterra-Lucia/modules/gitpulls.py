@@ -3,19 +3,31 @@ import requests
 import sys
 import pandas as pd
 
+
 class gitPulls ():
 
     def __init__(self, config):
 
         with open(config) as f:
             data = json.load(f)
-
-        self.repositories = data["repos"]
+        
         self.username = data["gituser"]
         self.token = data ["token"]
         self.url = data["url"]
+        self.session = requests.Session()
+        self.repositories = self.get_repos()
 
-    def getPullRequests (self):
+        
+    def get_repos(self):
+        url = 'https://api.github.com/users/k8-proxy/repos'      
+        try:
+            repos = pd.DataFrame(self.session.get(url=url).json())
+            return repos['name'].apply(lambda s: 'k8-proxy/'+s if isinstance(s, str) else s).to_list()
+        except requests.exceptions.RequestException as e:
+            raise SystemExit(e)          
+
+
+    def getPullRequests(self):
     
         d = []
 
