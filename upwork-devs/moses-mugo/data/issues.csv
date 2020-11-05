@@ -1,0 +1,253 @@
+repo,title,user_,state,url,created_at,assignee
+aws-jmeter-test-engine,Implement delete stack feature in main master script,uzfarid,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/89,2020-10-29T20:41:32Z,Ali-J2
+aws-jmeter-test-engine,Enable prefix in createStack python script and ensure that StartExecution.sh is based on new template,uzfarid,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/87,2020-10-29T04:43:16Z,pranaysahith
+aws-jmeter-test-engine,Icapmonitoring,uzfarid,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/84,2020-10-27T04:30:34Z,
+aws-jmeter-test-engine,Create master python script to automatically create dashboard and also create stack,uzfarid,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/83,2020-10-26T08:09:03Z,Ali-J2
+aws-jmeter-test-engine,Test data integration,uzfarid,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/82,2020-10-25T17:30:56Z,
+aws-jmeter-test-engine,add instructions to create new workflow,pranaysahith,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/81,2020-10-25T08:54:58Z,pranaysahith
+aws-jmeter-test-engine,Logic for handling malware zip files,MaNe2020,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/80,2020-10-23T14:13:29Z,
+aws-jmeter-test-engine,Create feature to delete CF stacks after test is run,uzfarid,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/77,2020-10-22T16:25:45Z,pranaysahith
+aws-jmeter-test-engine,Add reverse proxy to the SharePoint site https://saaspoc1-my.sharepoint.com/,NadHodeGW,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/76,2020-10-22T16:00:48Z,
+aws-jmeter-test-engine,Build capability to handle zip files in Jmeter script,uzfarid,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/60,2020-10-20T06:33:53Z,MaNe2020
+aws-jmeter-test-engine,Integrate Jmeter script data with test-data provided by k8-test-data-project,uzfarid,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/55,2020-10-19T07:38:24Z,"['uzfarid', 'hongson1981']"
+aws-jmeter-test-engine,Modify Jmeter to send different error codes to influx DB to show on the dashboard,uzfarid,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/54,2020-10-19T07:36:21Z,"['uzfarid', 'hongson1981']"
+aws-jmeter-test-engine,convert powershell scripts to python.,uzfarid,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/46,2020-10-15T09:31:06Z,jpoolGW
+aws-jmeter-test-engine,Building Grafana graphs based on ICAP Server metrics and integrate those graphs to main grafana dashboard template,jpoolGW,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/30,2020-10-05T15:00:46Z,Ali-J2
+aws-jmeter-test-engine,Optimize usage of S3 while load is running,NadHodeGW,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/23,2020-10-02T09:31:08Z,uzfarid
+aws-jmeter-test-engine,Create heart beat load test using the defined base load script on test plan,NadHodeGW,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/21,2020-10-01T14:30:11Z,pranaysahith
+aws-jmeter-test-engine,Create stress test using the defined stress load script on test plan,NadHodeGW,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/20,2020-10-01T14:27:52Z,
+aws-jmeter-test-engine,Create peak load test using the defined peak load script on test plan,NadHodeGW,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/19,2020-10-01T14:27:24Z,
+aws-jmeter-test-engine,Create Base load test using the defined base load script on test plan,NadHodeGW,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/18,2020-10-01T14:26:23Z,uzfarid
+aws-jmeter-test-engine,Add readme with all instructions for setup,NadHodeGW,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/17,2020-10-01T10:08:56Z,uzfarid
+aws-jmeter-test-engine,Setup continuous integration with GitHub Actions ,NadHodeGW,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/14,2020-09-29T17:40:46Z,pranaysahith
+aws-jmeter-test-engine,Add Load Generator creation instructions,NadHodeGW,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/10,2020-09-29T16:39:14Z,uzfarid
+aws-jmeter-test-engine,Research on how to view JMeter log files as text in Grafana.,NadHodeGW,open,https://api.github.com/repos/k8-proxy/aws-jmeter-test-engine/issues/8,2020-09-29T16:36:42Z,uzfarid
+chrome-extension,Dockerize the backend application,IslamHeggy,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/18,2020-10-04T15:50:17Z,IslamHeggy
+chrome-extension,Test chrome extension with forensic-workbench,kumarsudhish,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/17,2020-09-30T05:39:40Z,"['gmuditdce', 'kumarsudhish']"
+chrome-extension,"Test chrome extension with file-drop, i.e. uploading a file in file drop and then verifying that it should be captured by Chrome Extension",kumarsudhish,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/16,2020-09-30T05:38:52Z,"['gmuditdce', 'kumarsudhish']"
+chrome-extension,Stop exceptions to rebuild sdk while intercepting files,kumarsudhish,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/15,2020-09-30T05:36:43Z,gmuditdce
+chrome-extension,"Chrome extension currently implemented captures form-data, need to add support to capture ajax calls",kumarsudhish,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/14,2020-09-30T05:33:08Z,gmuditdce
+chrome-extension,Create Sanity Test Suite Document,b24repo,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/11,2020-09-22T10:15:16Z,"['b24repo', 'gmuditdce', 'kumarsudhish']"
+chrome-extension,Host the extension on Chrome Store,b24repo,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/10,2020-09-16T07:37:43Z,kumarsudhish
+chrome-extension,Verify the Extension,b24repo,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/7,2020-09-14T06:16:09Z,
+chrome-extension,Integrate with rebuild sdk,b24repo,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/6,2020-09-14T06:15:51Z,gmuditdce
+chrome-extension,Intercept downloads,b24repo,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/5,2020-09-14T06:15:35Z,gmuditdce
+chrome-extension,Intercept Upload,b24repo,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/4,2020-09-14T06:15:21Z,gmuditdce
+chrome-extension,Create Readme,b24repo,open,https://api.github.com/repos/k8-proxy/chrome-extension/issues/1,2020-09-14T06:13:15Z,"['b24repo', 'gmuditdce']"
+glasswall-desktop,Test scenario creation for newly feature support.,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/132,2020-10-30T19:54:29Z,kumarsudhish
+glasswall-desktop," Each calls to me made is separate execution, so that it can start multiple async call in parallel.",kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/131,2020-10-30T19:37:21Z,
+glasswall-desktop,To add new tab in left panel for Logs Console,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/130,2020-10-30T19:35:32Z,
+glasswall-desktop,Configuration page to be introduced where you can do the docker setup,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/129,2020-10-30T19:33:53Z,
+glasswall-desktop,To restrict user to access Local Docker page incase health fails,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/128,2020-10-30T19:32:17Z,
+glasswall-desktop,"On hitting the docker rebuild page, 2 health checks calls to be made.",kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/127,2020-10-30T19:29:49Z,
+glasswall-desktop,Creating Sub-title for video v0.1.4,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/125,2020-10-30T12:34:52Z,kumarsudhish
+glasswall-desktop,To push separate metrics for cloud rebuild from glasswall desktop to GA ,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/124,2020-10-30T06:50:15Z,"['gmuditdce', 'nishantswarup']"
+glasswall-desktop,To add Developer document pages on the Web Portal for developer community supporting different platform.,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/117,2020-10-28T06:46:55Z,
+glasswall-desktop,Breaking ReadMe in separate pages,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/116,2020-10-28T06:46:12Z,
+glasswall-desktop, Create Document of the workflows > Technical briefing for Dinis to validate and architecture how is working review,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/115,2020-10-28T06:45:27Z,
+glasswall-desktop,To create more secure version of rebuild app api key.,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/114,2020-10-28T06:44:42Z,
+glasswall-desktop,To provide Analysis report with the visualization team for the Dashboard creation,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/113,2020-10-28T06:43:27Z,"['b24repo', 'rajmbcoderx']"
+glasswall-desktop,Rebuild App: Signed build needs to be created for rebuild desktop app. (MAC),kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/110,2020-10-28T06:18:52Z,nishantswarup
+glasswall-desktop,Google Analytics: Track event of installer download per Operating System (Windows/MAC/Linux),kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/91,2020-10-22T14:24:17Z,nishantswarup
+glasswall-desktop,On playing video on web portal user has click twice to play that.,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/89,2020-10-21T14:04:40Z,rajmbcoderx
+glasswall-desktop,Intermittent: At times the upgrade of new desktop app version fails and downloading of new version stops in middle,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/84,2020-10-21T06:45:42Z,rajmbcoderx
+glasswall-desktop,"On clicking No, thanks the downloading of updated installer keeps on running in background",kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/83,2020-10-21T06:21:11Z,rajmbcoderx
+glasswall-desktop,UI issue ,rajmbcoderx,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/78,2020-10-20T13:39:07Z,rajmbcoderx
+glasswall-desktop,To kick start on adding unit testing using spectrone,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/76,2020-10-20T04:33:15Z,"['rajmbcoderx', 'gmuditdce']"
+glasswall-desktop,"On clicking No Thanks on upgrade pop-up, the installation of the upgraded version is not stopped",kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/75,2020-10-20T04:17:00Z,rajmbcoderx
+glasswall-desktop,Some files not processing as expected,gmannGlasswall,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/65,2020-10-19T14:54:20Z,"['gmuditdce', 'kumarsudhish']"
+glasswall-desktop,Analysis report horizontal scrolling,gmannGlasswall,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/64,2020-10-19T14:43:19Z,"['rajmbcoderx', 'kumarsudhish']"
+glasswall-desktop,Useability issues,gmannGlasswall,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/63,2020-10-19T14:36:15Z,"['rajmbcoderx', 'gmuditdce', 'kumarsudhish']"
+glasswall-desktop,Rebuild App: While file processing is in-progress user should be allowed to click on link,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/62,2020-10-19T13:58:30Z,"['rajmbcoderx', 'gmuditdce']"
+glasswall-desktop,"EULA : User is not displayed the EULA, Terms & Condition page while installer is executed",kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/57,2020-10-19T13:24:43Z,rajmbcoderx
+glasswall-desktop,Rebuild App: On running the installer again the processed folder is deleted,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/56,2020-10-19T13:23:15Z,rajmbcoderx
+glasswall-desktop,"Rebuild App: On running the installer again, user is not asked that is already installed.",kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/55,2020-10-19T13:21:38Z,"['rajmbcoderx', 'gmuditdce']"
+glasswall-desktop,Add spectron test framework and add tests for Rebuild Page,kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/53,2020-10-19T12:01:13Z,"['hunnain', 'kumarsudhish']"
+glasswall-desktop,Rebuild App: Signed build needs to be created for rebuild desktop app. (Windows),kumarsudhish,open,https://api.github.com/repos/k8-proxy/glasswall-desktop/issues/49,2020-10-19T11:14:29Z,nishantswarup
+gp-b-docker-v01-sharepoint,Protection of https://glasswallk8.sharepoint.com/sites/GW-demo-sharepoint,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-b-docker-v01-sharepoint/issues/1,2020-10-28T17:13:10Z,"['svf97', 'top-dev-mania']"
+gp-emma-dataport-website,Dataflow/sequence diagrams for emma-dataport,GINAGC,open,https://api.github.com/repos/k8-proxy/gp-emma-dataport-website/issues/7,2020-10-30T10:27:50Z,a-khaledf
+gp-emma-dataport-website,Architecture diagrams in plantum,GINAGC,open,https://api.github.com/repos/k8-proxy/gp-emma-dataport-website/issues/6,2020-10-30T10:27:08Z,
+gp-emma-dataport-website,Readme improvements,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-emma-dataport-website/issues/5,2020-10-30T08:26:43Z,azopat
+gp-emma-dataport-website,Replicate initial attempt,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-emma-dataport-website/issues/4,2020-10-27T10:07:48Z,"['silvanayousry', 'ab-tech-coder', 'ayasarhan']"
+gp-emma-dataport-website,Production installation,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-emma-dataport-website/issues/3,2020-10-27T10:04:53Z,azopat
+gp-emma-dataport-website,dataport.emma.msrb.org initial attempt,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-emma-dataport-website/issues/1,2020-10-23T14:27:11Z,"['azopat', 'pranaysahith']"
+gp-engineering-website,Expose ICAP listener,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-engineering-website/issues/6,2020-10-27T10:44:45Z,NourEddineX
+gp-engineering-website,Production installation,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-engineering-website/issues/4,2020-10-26T07:28:59Z,NourEddineX
+gp-engineering-website,Replicate initial attempt,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-engineering-website/issues/3,2020-10-26T07:25:14Z,"['IslamHeggy', 'naderaly', 'reem-masoud']"
+gp-engineering-website,engineering.glasswallsolutions.com initial attempt,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-engineering-website/issues/1,2020-10-23T14:41:54Z,NourEddineX
+gp-filedrop-website,Create a baseline metrics for each micro-service and at instance / docker /pod level ,susilupwork,open,https://api.github.com/repos/k8-proxy/gp-filedrop-website/issues/12,2020-10-30T12:20:09Z,yardenshoham
+gp-filedrop-website,Create a baseline metrics for each micro-service ,susilupwork,open,https://api.github.com/repos/k8-proxy/gp-filedrop-website/issues/11,2020-10-30T12:17:43Z,"['nirvishek', 'hongson1981']"
+gp-filedrop-website,"Extend the deploy script to other ""K8 version of proxy"" by just version change in k8_proxy_config.xxx file. ",susilupwork,open,https://api.github.com/repos/k8-proxy/gp-filedrop-website/issues/10,2020-10-30T12:16:05Z,yardenshoham
+gp-filedrop-website,Integrate rancher cluster script and proxy deployment script to single script.,susilupwork,open,https://api.github.com/repos/k8-proxy/gp-filedrop-website/issues/9,2020-10-30T12:13:16Z,yardenshoham
+gp-filedrop-website,Create initial single script to deploy proxy solution (k8s v0.1) to the rancher cluster,susilupwork,open,https://api.github.com/repos/k8-proxy/gp-filedrop-website/issues/8,2020-10-30T12:12:03Z,"['yardenshoham', 'hongson1981']"
+gp-filedrop-website,Create terraform script to create multinode auto expandable Rancher cluster,susilupwork,open,https://api.github.com/repos/k8-proxy/gp-filedrop-website/issues/7,2020-10-30T12:11:07Z,yardenshoham
+gp-filedrop-website,Other variation of cluster config/  Proxies to collect best performing metrics,susilupwork,open,https://api.github.com/repos/k8-proxy/gp-filedrop-website/issues/6,2020-10-23T15:32:20Z,
+gp-filedrop-website,Performance testing /metrics using already developed JMeter test engine,susilupwork,open,https://api.github.com/repos/k8-proxy/gp-filedrop-website/issues/5,2020-10-23T15:30:38Z,"['nirvishek', 'hongson1981']"
+gp-filedrop-website,Application deployment and configuration of file-drop proxy ,susilupwork,open,https://api.github.com/repos/k8-proxy/gp-filedrop-website/issues/3,2020-10-23T15:11:17Z,"['nirvishek', 'hongson1981']"
+gp-filedrop-website,Create technology approach for Option-B proxy using K8-proxy v1 as proxy for website : https://glasswall-file-drop.com/,susilupwork,open,https://api.github.com/repos/k8-proxy/gp-filedrop-website/issues/1,2020-10-23T09:43:51Z,"['yardenshoham', 'hongson1981']"
+gp-glasswallsolutions-website,Production installation,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-glasswallsolutions-website/issues/4,2020-10-26T14:44:44Z,pranaysahith
+gp-glasswallsolutions-website,Replicate initial attempt,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-glasswallsolutions-website/issues/3,2020-10-26T14:42:00Z,"['mohammedbakr', 'svf97']"
+gp-glasswallsolutions-website,glasswallsolutions.com initial attempt,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-glasswallsolutions-website/issues/1,2020-10-23T14:54:43Z,pranaysahith
+gp-jira-website,1st commit - work in progress,MariuszFerdyn,open,https://api.github.com/repos/k8-proxy/gp-jira-website/issues/5,2020-10-27T08:41:15Z,
+gp-jira-website,add k8s scripts related to issue #1,upworkroozbeh,open,https://api.github.com/repos/k8-proxy/gp-jira-website/issues/3,2020-10-25T17:59:40Z,
+gp-jira-website,Create helm chart for k8s-reverse-proxy,faisaladnanpeltops,open,https://api.github.com/repos/k8-proxy/gp-jira-website/issues/2,2020-10-23T16:49:32Z,MariuszFerdyn
+gp-jira-website,Deploy single node k8s on GW AWS,faisaladnanpeltops,open,https://api.github.com/repos/k8-proxy/gp-jira-website/issues/1,2020-10-23T16:48:18Z,upworkroozbeh
+gp-owasp-website,Create AMI,techtinder,open,https://api.github.com/repos/k8-proxy/gp-owasp-website/issues/5,2020-10-27T13:22:51Z,"['belwase', 'anejaalekh']"
+gp-owasp-website,Automate the k8 setup using terraform,techtinder,open,https://api.github.com/repos/k8-proxy/gp-owasp-website/issues/4,2020-10-27T13:22:13Z,"['belwase', 'anejaalekh']"
+gp-owasp-website,Setup k8 node with all the images,techtinder,open,https://api.github.com/repos/k8-proxy/gp-owasp-website/issues/3,2020-10-27T13:21:51Z,"['belwase', 'anejaalekh']"
+gp-owasp-website,Understand ICAP client proxy,techtinder,open,https://api.github.com/repos/k8-proxy/gp-owasp-website/issues/2,2020-10-27T13:21:21Z,"['belwase', 'mohitsengarr', 'anejaalekh']"
+gp-owasp-website,Understand existing solution ,techtinder,open,https://api.github.com/repos/k8-proxy/gp-owasp-website/issues/1,2020-10-27T13:19:35Z,"['belwase', 'mohitsengarr', 'anejaalekh']"
+gp-sharepoint,Rewrite Engine misses Sharepoint Homepage url rewrites,mrbrl,open,https://api.github.com/repos/k8-proxy/gp-sharepoint/issues/1,2020-10-30T04:31:53Z,
+gp-uk-zones-com,Document Lets encrypt process,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-uk-zones-com/issues/5,2020-10-30T16:57:50Z,NourEddineX
+gp-uk-zones-com,Create a video with the solution in action (end to end workflow) ,dtollaku,open,https://api.github.com/repos/k8-proxy/gp-uk-zones-com/issues/4,2020-10-28T11:54:03Z,
+gp-uk-zones-com,Production installation,mahnouman,open,https://api.github.com/repos/k8-proxy/gp-uk-zones-com/issues/1,2020-10-27T13:35:49Z,NourEddineX
+GW-proxy,Programatically update wiki with website projects information,GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/87,2020-10-30T12:39:52Z,
+GW-proxy,Add initial documentation to wiki,GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/85,2020-10-28T16:50:14Z,
+GW-proxy,Start setting up dashboards,GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/84,2020-10-28T16:49:21Z,
+GW-proxy,Review existing information from google docs,GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/83,2020-10-28T16:48:42Z,GINAGC
+GW-proxy,"Review existing documentation from Slack (chat, documents, videos)",GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/82,2020-10-28T16:48:20Z,GINAGC
+GW-proxy,Review all existing information from projects - map information,GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/81,2020-10-28T16:47:56Z,GINAGC
+GW-proxy,Setup Sections on wiki,GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/80,2020-10-28T16:47:21Z,
+GW-proxy,Setup Docusaurus Workflow,GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/79,2020-10-28T16:47:12Z,GINAGC
+GW-proxy,Setup Docusaurus Pipelines,GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/78,2020-10-28T16:46:56Z,
+GW-proxy,Setup Docusaurus on Github,GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/77,2020-10-28T16:46:50Z,
+GW-proxy,Setup Docusaurus Repo,GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/76,2020-10-28T16:46:43Z,
+GW-proxy,Update README.md,GINAGC,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/75,2020-10-28T13:15:45Z,
+GW-proxy,"Create a FAQ page with base docker image link, Procedure to get different access etc. ",susilupwork,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/70,2020-10-04T14:11:09Z,susilupwork
+GW-proxy,A Configured docker image with Icap client installed for use case 1,NadHodeGW,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/69,2020-09-22T15:00:12Z,
+GW-proxy,A Test scenario file using JMeter configured for concurrency test,NadHodeGW,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/68,2020-09-22T14:28:13Z,
+GW-proxy,Newcomers Onboarding Process,AndresJim,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/59,2020-09-07T12:41:40Z,
+GW-proxy,Create Python coding guideline in .MD format to accommodate future changes,susilupwork,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/52,2020-09-03T21:17:25Z,susilupwork
+GW-proxy,"Create Jupyter Notebook Guideline and keep it centrally, which all team can refer. ",susilupwork,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/45,2020-09-03T20:39:04Z,susilupwork
+GW-proxy,Update Checklist for new comers,chrisdiao,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/35,2020-09-02T15:51:31Z,
+GW-proxy,create a Tech Radar mapping for the Tech used on these projects,markband,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/32,2020-09-02T12:11:06Z,
+GW-proxy,create a GW Slack Operating model markdown page,markband,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/30,2020-09-02T12:10:00Z,GINAGC
+GW-proxy,create GitHub page with every Upwork resource currently working on these projects,markband,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/29,2020-09-02T12:04:35Z,GINAGC
+GW-proxy,remove NodeJS has a backend language to use. from now on it should only be Python or Go,markband,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/28,2020-09-02T12:03:01Z,
+GW-proxy,create a deck/pdf that clearly explains the project's brief and scope,markband,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/27,2020-09-02T12:02:42Z,
+GW-proxy,Create a mapping per project for the resources currently allocated to it,markband,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/26,2020-09-02T12:01:20Z,GINAGC
+GW-proxy,"create project that ""Generates coverage sets for supported file types""",markband,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/25,2020-09-02T12:00:42Z,dtollaku
+GW-proxy,create new project: Create Threat Intelligence reports from XML files created by Glasswall Rebuild engine,markband,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/24,2020-09-02T11:59:19Z,
+GW-proxy,create a first pass at using the  https://pragmaticinstitute.com/product/framework/ ,markband,open,https://api.github.com/repos/k8-proxy/GW-proxy/issues/23,2020-09-02T11:56:44Z,GINAGC
+icap-poc-load-balancer,Add full documentation on how to add / remove endpoints from the load balancer,NadHodeGW,open,https://api.github.com/repos/k8-proxy/icap-poc-load-balancer/issues/4,2020-10-06T08:12:51Z,"['pranaysahith', 'upworkroozbeh']"
+icap-poc-load-balancer,Implement Initial config to distribute to all ICAP endpoints,NadHodeGW,open,https://api.github.com/repos/k8-proxy/icap-poc-load-balancer/issues/3,2020-10-06T08:12:18Z,
+icap-poc-load-balancer,Add a public load balancer for port 1433,NadHodeGW,open,https://api.github.com/repos/k8-proxy/icap-poc-load-balancer/issues/2,2020-10-06T08:11:26Z,
+icap-poc-load-balancer,Add Additional Endpoints for ICAP,NadHodeGW,open,https://api.github.com/repos/k8-proxy/icap-poc-load-balancer/issues/1,2020-10-06T08:10:48Z,
+ICAP-threat-model,Images,baker371,open,https://api.github.com/repos/k8-proxy/ICAP-threat-model/issues/1,2020-10-28T21:52:01Z,
+k8-data-visualization,Extract k8-proxy repo's programmatically,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-data-visualization/issues/140,2020-10-28T18:17:44Z,lucia15
+k8-data-visualization,Create a new functionality of the github-labeller to create labels for a specific repo,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-data-visualization/issues/138,2020-10-28T17:47:09Z,baker371
+k8-data-visualization,zenhub_boards notebook is showing some error,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-data-visualization/issues/135,2020-10-23T10:19:15Z,mnjenga2
+k8-data-visualization,issues notebook is showing some error,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-data-visualization/issues/134,2020-10-23T10:11:59Z,mnjenga2
+k8-data-visualization,issues notebook is showing some error,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-data-visualization/issues/122,2020-10-13T15:26:51Z,baker371
+k8-data-visualization,Migrate application to docker image CentOS 7v,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-data-visualization/issues/118,2020-10-13T09:11:44Z,mnjenga2
+k8-data-visualization,Apply Jupyter Themes in your notebooks - Moses,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-data-visualization/issues/95,2020-09-26T16:16:17Z,mnjenga2
+k8-data-visualization,Apply Text2Code for Jupyter notebook - Moses,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-data-visualization/issues/87,2020-09-26T15:31:07Z,mnjenga2
+k8-data-visualization,Create a Jupyter Notebook Table Content - Moses,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-data-visualization/issues/84,2020-09-26T15:18:52Z,mnjenga2
+k8-glasswall-rebuild,Fix the repo,yardenshoham,open,https://api.github.com/repos/k8-proxy/k8-glasswall-rebuild/issues/48,2020-10-20T11:30:35Z,yardenshoham
+k8-glasswall-rebuild,Rebuild statistics assessment,azopat,open,https://api.github.com/repos/k8-proxy/k8-glasswall-rebuild/issues/47,2020-10-20T07:56:24Z,azopat
+k8-glasswall-rebuild,Enhance the python script,azopat,open,https://api.github.com/repos/k8-proxy/k8-glasswall-rebuild/issues/46,2020-10-20T07:54:34Z,yardenshoham
+k8-glasswall-rebuild,Place all XMLs under one folder,GINAGC,open,https://api.github.com/repos/k8-proxy/k8-glasswall-rebuild/issues/45,2020-10-19T18:32:45Z,
+k8-glasswall-rebuild,Fix the repo,b24repo,open,https://api.github.com/repos/k8-proxy/k8-glasswall-rebuild/issues/44,2020-10-18T15:25:56Z,yardenshoham
+k8-glasswall-rebuild,Rebuild files from virus database provided,azopat,open,https://api.github.com/repos/k8-proxy/k8-glasswall-rebuild/issues/40,2020-10-12T08:23:08Z,yardenshoham
+k8-glasswall-rebuild,Implement RabbitMQ/activemq on argo codebase,markband,open,https://api.github.com/repos/k8-proxy/k8-glasswall-rebuild/issues/33,2020-09-28T14:13:52Z,azopat
+k8-glasswall-rebuild,add support for using this ICAP service to invoke the Glasswall engine https://github.com/filetrust/program-icap/wiki/Using-the-C-ICAP-Test-Client,markband,open,https://api.github.com/repos/k8-proxy/k8-glasswall-rebuild/issues/26,2020-09-11T13:22:57Z,
+k8-glasswall-rebuild,Explore & assess feasibility of orchestrating all the actions in https://github.com/filetrust/mvp-icap-cloud/wiki/Process-Flow#future-approach inside a pod,markband,open,https://api.github.com/repos/k8-proxy/k8-glasswall-rebuild/issues/25,2020-09-07T23:21:41Z,azopat
+k8-glasswall-rebuild,create a POC using Jenkins X,markband,open,https://api.github.com/repos/k8-proxy/k8-glasswall-rebuild/issues/21,2020-09-07T11:23:38Z,M-Ayman
+k8-glasswall-rebuild,Create MD (markdown) file that explains the workflow ,markband,open,https://api.github.com/repos/k8-proxy/k8-glasswall-rebuild/issues/5,2020-08-26T11:29:30Z,
+k8-performance-use-cases,A Kubernetes (K8) native application able to generate large amounts of traffic,NadHodeGW,open,https://api.github.com/repos/k8-proxy/k8-performance-use-cases/issues/22,2020-09-22T14:23:53Z,
+k8-performance-use-cases,Update the docker file with input from the test data storage,NadHodeGW,open,https://api.github.com/repos/k8-proxy/k8-performance-use-cases/issues/19,2020-09-18T12:08:12Z,MaNe2020
+k8-performance-use-cases,Test the traffic generator documentation,faisaladnanpeltops,open,https://api.github.com/repos/k8-proxy/k8-performance-use-cases/issues/17,2020-09-12T20:30:25Z,ksuriwork
+k8-performance-use-cases,Create a pod for squid-cache-proxy that can be deployed with traffic generators.  ,faisaladnanpeltops,open,https://api.github.com/repos/k8-proxy/k8-performance-use-cases/issues/16,2020-09-11T15:53:31Z,hongson1981
+k8-performance-use-cases,Test ICAP Server using ICAP Client ,faisaladnanpeltops,open,https://api.github.com/repos/k8-proxy/k8-performance-use-cases/issues/13,2020-09-07T18:26:29Z,MaNe2020
+k8-performance-use-cases,Design Load Script for defined Profiles & Load Patterns,NadHodeGW,open,https://api.github.com/repos/k8-proxy/k8-performance-use-cases/issues/7,2020-09-03T13:06:22Z,"['hongson1981', 'MaNe2020']"
+k8-proxy-desktop,Rebuild App: Verification of ReadME for customer release,kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/143,2020-10-12T19:47:07Z,kumarsudhish
+k8-proxy-desktop,POC Auto detection of pendrive when desktop is running.,kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/122,2020-10-05T20:53:42Z,"['rajmbcoderx', 'hunnain', 'gmuditdce']"
+k8-proxy-desktop,"Facing challenge in Node integration with React and Electron, so to fix that issue. (Once issue is fixed, we will able to see notebook and then we will mount the notebook root of the Jupiter visualization repo)",kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/109,2020-10-02T18:04:40Z,gmuditdce
+k8-proxy-desktop,"Not to start the Notebook directly on clicking the Jupyter Notebooks tab, rather user should be displayed page with a button on clicking this tab and once user click on that button the Notebook should start.",kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/108,2020-10-02T18:03:52Z,gmuditdce
+k8-proxy-desktop,To integrate latest version Notebook version with default container.,kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/107,2020-10-02T18:02:53Z,gmuditdce
+k8-proxy-desktop,File Drop: To add option that user can drag the file from header and could drop that to the File Drop button.,kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/102,2020-10-02T17:40:39Z,rajmbcoderx
+k8-proxy-desktop,Happy User and Stargazers and Forks count there is no heading of the section and also count is completely static,kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/98,2020-09-30T19:50:08Z,
+k8-proxy-desktop,Incase there is no internet connectivity then user is not displayed any user friendly error message when user clicks on any links under the desktop app,kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/94,2020-09-30T19:28:53Z,rajmbcoderx
+k8-proxy-desktop,Support for new member to join slack incase of any issue needs to be added.,kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/92,2020-09-30T06:37:56Z,rajmbcoderx
+k8-proxy-desktop,Pre-requisite such as Node and NPM version and screenshot related to it is missing from the READme,kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/91,2020-09-30T06:33:42Z,kumarsudhish
+k8-proxy-desktop,"On clicking any link under the File Drop window, it opens a seperate window (Desktop app), rather than opening the link in same window",kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/90,2020-09-30T06:00:26Z,rajmbcoderx
+k8-proxy-desktop,Copyright of the complete desktop has to be one,kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/88,2020-09-30T05:54:57Z,rajmbcoderx
+k8-proxy-desktop,There is no EULA present while installing the exe.,kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/85,2020-09-30T05:49:28Z,kumarsudhish
+k8-proxy-desktop," Chrome extension currently implemented captures form-data, need to add support to capture ajax calls",kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/84,2020-09-30T05:29:04Z,
+k8-proxy-desktop,As a user I should be able to visualize git repos from the notebooks in the app,rajmbcoderx,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/82,2020-09-29T09:23:00Z,nishantswarup
+k8-proxy-desktop,As a user I should be able to mount visualization repo on local docker,rajmbcoderx,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/81,2020-09-29T09:22:01Z,gmuditdce
+k8-proxy-desktop,As a user I should be able to run local Jupyter notebook docker images,rajmbcoderx,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/80,2020-09-29T09:13:15Z,gmuditdce
+k8-proxy-desktop, Build React website through CI/CD,rajmbcoderx,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/77,2020-09-27T15:18:39Z,"['rajmbcoderx', 'gmuditdce']"
+k8-proxy-desktop,GIT API integration to raise any issue needs to be added by new member,rajmbcoderx,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/76,2020-09-27T15:03:12Z,rajmbcoderx
+k8-proxy-desktop,Publish a build to Github Release,rajmbcoderx,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/75,2020-09-27T13:48:17Z,gmuditdce
+k8-proxy-desktop,UI Option to join slack incase of any issue needs to be added by new member,kumarsudhish,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/71,2020-09-25T13:35:04Z,
+k8-proxy-desktop,Report an issue should have Desktop UI ,rajmbcoderx,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/68,2020-09-25T11:52:39Z,rajmbcoderx
+k8-proxy-desktop,Website UX,rajmbcoderx,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/57,2020-09-23T02:40:03Z,
+k8-proxy-desktop,Have Readme contents on the website,rajmbcoderx,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/56,2020-09-23T02:39:12Z,hunnain
+k8-proxy-desktop,"Use-case : As a user I should be able to list Issue count, PR count, PR under the git browser",b24repo,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/49,2020-09-21T06:18:40Z,
+k8-proxy-desktop,Use-case : As a user I should be able to auto login ( Puppeteer to auto-login to user) into Forensic workbench,b24repo,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/47,2020-09-21T06:18:24Z,
+k8-proxy-desktop,Use-case : As a user I should be able to run Jupiter notebook and issue doc command fro there,b24repo,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/46,2020-09-21T06:18:17Z,gmuditdce
+k8-proxy-desktop,Use-case : As a user open desktop app he can see more details about the product on the home screen,b24repo,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/45,2020-09-21T06:18:07Z,
+k8-proxy-desktop,Use-case : As a user I should be able to add new suggestion or bug on the gitlab issue,b24repo,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/44,2020-09-21T06:18:01Z,
+k8-proxy-desktop,Use-case : As a user on home page for list of new features in the current version (Issues notes / Bugs ),b24repo,open,https://api.github.com/repos/k8-proxy/k8-proxy-desktop/issues/43,2020-09-21T06:17:54Z,
+k8-reverse-proxy,Nginx URL rewrites issues with Location headers on 301 and 302 responses,NourEddineX,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/57,2020-10-30T11:04:42Z,NourEddineX
+k8-reverse-proxy,gwproxy.env not found while building OVA and AMI,IslamHeggy,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/53,2020-10-12T18:07:16Z,pranaysahith
+k8-reverse-proxy,k8 Image Requirements,svf97,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/52,2020-10-06T16:38:08Z,
+k8-reverse-proxy,Implement the reverse proxy for https://glasswallsolutions.com,mahnouman,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/48,2020-09-29T23:42:26Z,svf97
+k8-reverse-proxy,Implement the reverse proxy for https://file-drop.co.uk,mahnouman,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/46,2020-09-25T18:40:13Z,naderaly
+k8-reverse-proxy,Target CentOS 8,mahnouman,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/41,2020-09-22T13:17:35Z,Abby595
+k8-reverse-proxy,Move c-icap submodule to stable-src/,NourEddineX,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/39,2020-09-21T16:39:25Z,NourEddineX
+k8-reverse-proxy,Programmatically discover embedded URLs of interest,mahnouman,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/26,2020-09-10T21:18:38Z,
+k8-reverse-proxy,Gov.uk-Some downloaded link files are not protected,NadHodeGW,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/24,2020-09-10T13:43:07Z,
+k8-reverse-proxy,deceptive site workaround,mahnouman,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/21,2020-09-09T08:20:19Z,
+k8-reverse-proxy,Create reference implementation,GINAGC,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/8,2020-09-02T09:52:32Z,
+k8-reverse-proxy,Create diagram for Reverse proxy project,GINAGC,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/7,2020-08-31T15:04:48Z,mahnouman
+k8-reverse-proxy,"EC2 or Azure VM deployment for ""https://glasswallsolutions.com"" reverse proxy",GINAGC,open,https://api.github.com/repos/k8-proxy/k8-reverse-proxy/issues/5,2020-08-27T15:46:30Z,
+k8-security,Building docker image for analyzing C binaries and the C# binaries,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/106,2020-10-19T10:49:46Z,JameelNabbo
+k8-security,Researching about the DAST tools for ICAP project,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/105,2020-10-19T10:49:16Z,"['JameelNabbo', 'beaviss']"
+k8-security,Creating the video with the script,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/104,2020-10-19T10:49:01Z,JameelNabbo
+k8-security,DAST tools research for analysing binaries ,JameelNabbo,open,https://api.github.com/repos/k8-proxy/k8-security/issues/103,2020-10-18T13:37:29Z,JameelNabbo
+k8-security,Merge blocking with SonarCloud,JameelNabbo,open,https://api.github.com/repos/k8-proxy/k8-security/issues/102,2020-10-18T13:36:26Z,JameelNabbo
+k8-security,Diagram of automation in harden image. ,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/101,2020-10-12T11:20:11Z,virajut
+k8-security,Readme files for RedHat Image summary,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/100,2020-10-12T11:16:27Z,zaddy6
+k8-security,Confirm data protection and risk management milestones and link existing issues,Infospectives,open,https://api.github.com/repos/k8-proxy/k8-security/issues/97,2020-10-06T11:36:07Z,Infospectives
+k8-security,Review ICAP Project Documents for Privacy Risks,Infospectives,open,https://api.github.com/repos/k8-proxy/k8-security/issues/96,2020-10-06T11:24:34Z,Infospectives
+k8-security,Creare RedHat7.x harden Image,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/95,2020-10-06T10:22:36Z,virajut
+k8-security,Supplementary risk assessment detail,Infospectives,open,https://api.github.com/repos/k8-proxy/k8-security/issues/94,2020-10-05T11:52:25Z,Infospectives
+k8-security,Provide more details about security guidelines that can be applied to this images,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/92,2020-10-02T17:25:04Z,michaelhidalgo
+k8-security,Implement sonarqube,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/90,2020-10-01T14:16:55Z,JameelNabbo
+k8-security,Create a PoC with the CI/CD in place.,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/88,2020-10-01T11:37:05Z,
+k8-security,Create  a high-level CI/CD diagram for hardening images.,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/87,2020-10-01T11:36:52Z,
+k8-security,Provide a report of installed packages and versions in the image,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/86,2020-10-01T11:36:36Z,michaelhidalgo
+k8-security,Define what elements needs to be hardened within the base image and within the developer images.,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/85,2020-10-01T11:36:26Z,michaelhidalgo
+k8-security,Code-review open source playbooks to apply CIS controls to the docker image,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/81,2020-10-01T11:34:34Z,beaviss
+k8-security,Prepare lab to test open source DAST Tools,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/79,2020-09-28T12:21:12Z,JameelNabbo
+k8-security,Guidelines for use of SAST tools in harden image,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/77,2020-09-28T12:17:38Z,
+k8-security,First points of contact - Incident Activation Process,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/76,2020-09-28T12:16:02Z,
+k8-security,Identify Data acquisition techniques,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/75,2020-09-28T12:14:26Z,
+k8-security,Create incident response process in GitHub,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/74,2020-09-28T12:13:43Z,
+k8-security,Research incident response companies in UK,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/73,2020-09-28T12:13:12Z,JameelNabbo
+k8-security,Incident response activation process,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/72,2020-09-28T12:11:45Z,JameelNabbo
+k8-security,Provide current playbook to Jameel,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/71,2020-09-28T12:11:07Z,jcanales
+k8-security,Prepare lab to test open source SAST Tools ,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/69,2020-09-28T12:05:19Z,udohsolomon
+k8-security,Vulnerability risk management process flow and FAQs,Infospectives,open,https://api.github.com/repos/k8-proxy/k8-security/issues/66,2020-09-23T16:09:36Z,"['jcanales', 'Infospectives']"
+k8-security,Risk assessment of Docker image one unpatch items,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/64,2020-09-22T21:54:58Z,michaelhidalgo
+k8-security,Create proof of concept to create a Docker Centos image from iso,jcanales,open,https://api.github.com/repos/k8-proxy/k8-security/issues/63,2020-09-22T21:54:19Z,"['michaelhidalgo', 'virajut', 'zaddy6']"
+k8-slack-bot,Integrate GWBOT,jcanales,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/28,2020-09-11T11:39:48Z,yardenshoham
+k8-slack-bot,"11. The raw issue data, to be consumed by the Jupyter Notebooks notebook.",chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/27,2020-09-11T09:08:05Z,
+k8-slack-bot,12. The data stored on a separate repo will allow the Developers working on the visualization to not have to deal with the data collection.,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/26,2020-09-11T09:06:51Z,
+k8-slack-bot,10. Leverage osbot_aws api from public APIS,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/25,2020-09-11T09:03:59Z,
+k8-slack-bot,9. The event data in JSON format to be injected to the elastic server,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/24,2020-09-11T09:03:37Z,
+k8-slack-bot,9. The event data in JSON format to be injected to the elastic server,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/23,2020-09-11T09:03:31Z,
+k8-slack-bot,8.4 Unit tests for owasp-git,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/22,2020-09-11T09:02:49Z,
+k8-slack-bot,8.3 Enhance owasp to support fetching Git data from ELK,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/21,2020-09-11T09:02:13Z,
+k8-slack-bot,8.2 Enhance owasp to support pushing Git data to ELK,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/20,2020-09-11T09:01:14Z,
+k8-slack-bot,8.1 Evaluate git actions for reactions to Git events from serverless code.,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/19,2020-09-11T09:00:11Z,
+k8-slack-bot,8. Setup a serverless workflow,chrisdiao,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/18,2020-09-11T08:58:26Z,
+k8-slack-bot,GitHub > Identify all needed access.,jcanales,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/14,2020-09-10T17:31:38Z,
+k8-slack-bot,Define Bot basic structure,jcanales,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/13,2020-09-10T17:28:32Z,
+k8-slack-bot,Create Architecture Diagram,jcanales,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/7,2020-09-09T10:49:16Z,
+k8-slack-bot,Fork initial repo,jcanales,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/6,2020-09-09T10:36:40Z,GiuseMSD
+k8-slack-bot,Get use cases for bot application.,jcanales,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/4,2020-09-09T10:33:59Z,
+k8-slack-bot,Define webhooks functions,jcanales,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/3,2020-09-09T10:33:31Z,
+k8-slack-bot,Create README.md,jcanales,open,https://api.github.com/repos/k8-proxy/k8-slack-bot/issues/1,2020-09-07T13:03:29Z,

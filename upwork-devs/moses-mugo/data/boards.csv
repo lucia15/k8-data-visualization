@@ -1,0 +1,253 @@
+project,summary,task,issue_id,repo_id,status
+aws-jmeter-test-engine,Implement delete stack feature in main master script,89,732644826,298066702,New Issues
+aws-jmeter-test-engine,Enable prefix in createStack python script and ensure that StartExecution.sh is based on new template,87,731993676,298066702,In Progress
+aws-jmeter-test-engine,Icapmonitoring,84,730095998,298066702,Peer Review
+aws-jmeter-test-engine,Create master python script to automatically create dashboard and also create stack,83,729349759,298066702,New Issues
+aws-jmeter-test-engine,Test data integration,82,729070408,298066702,Peer Review
+aws-jmeter-test-engine,add instructions to create new workflow,81,728974013,298066702,Peer Review
+aws-jmeter-test-engine,Logic for handling malware zip files,80,728253923,298066702,Peer Review
+aws-jmeter-test-engine,Create feature to delete CF stacks after test is run,77,727540727,298066702,Peer Review
+aws-jmeter-test-engine,Add reverse proxy to the SharePoint site https://saaspoc1-my.sharepoint.com/,76,727521210,298066702,New Issues
+aws-jmeter-test-engine,Build capability to handle zip files in Jmeter script,60,725251174,298066702,Peer Review
+aws-jmeter-test-engine,Integrate Jmeter script data with test-data provided by k8-test-data-project,55,724360415,298066702,New Issues
+aws-jmeter-test-engine,Modify Jmeter to send different error codes to influx DB to show on the dashboard,54,724359042,298066702,Peer Review
+aws-jmeter-test-engine,convert powershell scripts to python.,46,722164676,298066702,New Issues
+aws-jmeter-test-engine,Building Grafana graphs based on ICAP Server metrics and integrate those graphs to main grafana dashboard template,30,714919665,298066702,New Issues
+aws-jmeter-test-engine,Optimize usage of S3 while load is running,23,713482929,298066702,New Issues
+aws-jmeter-test-engine,Create heart beat load test using the defined base load script on test plan,21,712899623,298066702,New Issues
+aws-jmeter-test-engine,Create stress test using the defined stress load script on test plan,20,712897639,298066702,New Issues
+aws-jmeter-test-engine,Create peak load test using the defined peak load script on test plan,19,712897238,298066702,New Issues
+aws-jmeter-test-engine,Create Base load test using the defined base load script on test plan,18,712896382,298066702,New Issues
+aws-jmeter-test-engine,Add readme with all instructions for setup,17,712697383,298066702,New Issues
+aws-jmeter-test-engine,Setup continuous integration with GitHub Actions ,14,711320761,298066702,Peer Review
+aws-jmeter-test-engine,Add Load Generator creation instructions,10,711282388,298066702,Backlog
+aws-jmeter-test-engine,Research on how to view JMeter log files as text in Grafana.,8,711280770,298066702,Backlog
+chrome-extension,Dockerize the backend application,18,714342373,294478400,Peer Review
+chrome-extension,Test chrome extension with forensic-workbench,17,711647687,294478400,New Issues
+chrome-extension,"Test chrome extension with file-drop, i.e. uploading a file in file drop and then verifying that it should be captured by Chrome Extension",16,711647376,294478400,New Issues
+chrome-extension,Stop exceptions to rebuild sdk while intercepting files,15,711646487,294478400,New Issues
+chrome-extension,"Chrome extension currently implemented captures form-data, need to add support to capture ajax calls",14,711644965,294478400,New Issues
+chrome-extension,Create Sanity Test Suite Document,11,706250964,294478400,Peer Review
+chrome-extension,Host the extension on Chrome Store,10,702533019,294478400,In Progress
+chrome-extension,Verify the Extension,7,700796910,294478400,In Progress
+chrome-extension,Integrate with rebuild sdk,6,700796722,294478400,In Progress
+chrome-extension,Intercept downloads,5,700796562,294478400,In Progress
+chrome-extension,Intercept Upload,4,700796424,294478400,Peer Review
+chrome-extension,Create Readme,1,700795186,294478400,Peer Review
+glasswall-desktop,Test scenario creation for newly feature support.,132,733475969,304378562,In Progress
+glasswall-desktop," Each calls to me made is separate execution, so that it can start multiple async call in parallel.",131,733466190,304378562,Sprint Backlog
+glasswall-desktop,To add new tab in left panel for Logs Console,130,733465115,304378562,Sprint Backlog
+glasswall-desktop,Configuration page to be introduced where you can do the docker setup,129,733464150,304378562,Sprint Backlog
+glasswall-desktop,To restrict user to access Local Docker page incase health fails,128,733463237,304378562,Sprint Backlog
+glasswall-desktop,"On hitting the docker rebuild page, 2 health checks calls to be made.",127,733460510,304378562,Sprint Backlog
+glasswall-desktop,Creating Sub-title for video v0.1.4,125,733136634,304378562,Review/QA
+glasswall-desktop,To push separate metrics for cloud rebuild from glasswall desktop to GA ,124,732930838,304378562,In Progress
+glasswall-desktop,To add Developer document pages on the Web Portal for developer community supporting different platform.,117,731156325,304378562,New Issues
+glasswall-desktop,Breaking ReadMe in separate pages,116,731155881,304378562,New Issues
+glasswall-desktop, Create Document of the workflows > Technical briefing for Dinis to validate and architecture how is working review,115,731155369,304378562,New Issues
+glasswall-desktop,To create more secure version of rebuild app api key.,114,731154893,304378562,New Issues
+glasswall-desktop,To provide Analysis report with the visualization team for the Dashboard creation,113,731154113,304378562,New Issues
+glasswall-desktop,Rebuild App: Signed build needs to be created for rebuild desktop app. (MAC),110,731139388,304378562,Sprint Backlog
+glasswall-desktop,Google Analytics: Track event of installer download per Operating System (Windows/MAC/Linux),91,727438525,304378562,Review/QA
+glasswall-desktop,On playing video on web portal user has click twice to play that.,89,726525676,304378562,Sprint Backlog
+glasswall-desktop,Intermittent: At times the upgrade of new desktop app version fails and downloading of new version stops in middle,84,726190681,304378562,Product Backlog
+glasswall-desktop,"On clicking No, thanks the downloading of updated installer keeps on running in background",83,726175136,304378562,Product Backlog
+glasswall-desktop,UI issue ,78,725600616,304378562,Review/QA
+glasswall-desktop,To kick start on adding unit testing using spectrone,76,725186430,304378562,Product Backlog
+glasswall-desktop,"On clicking No Thanks on upgrade pop-up, the installation of the upgraded version is not stopped",75,725179942,304378562,Product Backlog
+glasswall-desktop,Some files not processing as expected,65,724704371,304378562,Product Backlog
+glasswall-desktop,Analysis report horizontal scrolling,64,724695088,304378562,Product Backlog
+glasswall-desktop,Useability issues,63,724688979,304378562,Product Backlog
+glasswall-desktop,Rebuild App: While file processing is in-progress user should be allowed to click on link,62,724637773,304378562,Product Backlog
+glasswall-desktop,"EULA : User is not displayed the EULA, Terms & Condition page while installer is executed",57,724607135,304378562,Product Backlog
+glasswall-desktop,Rebuild App: On running the installer again the processed folder is deleted,56,724605996,304378562,Product Backlog
+glasswall-desktop,"Rebuild App: On running the installer again, user is not asked that is already installed.",55,724604789,304378562,Product Backlog
+glasswall-desktop,Add spectron test framework and add tests for Rebuild Page,53,724545542,304378562,In Progress
+glasswall-desktop,Rebuild App: Signed build needs to be created for rebuild desktop app. (Windows),49,724515211,304378562,Sprint Backlog
+gp-b-docker-v01-sharepoint,Protection of https://glasswallk8.sharepoint.com/sites/GW-demo-sharepoint,1,731635853,308076754,
+gp-emma-dataport-website,Dataflow/sequence diagrams for emma-dataport,7,733059989,306445486,New Issues
+gp-emma-dataport-website,Architecture diagrams in plantum,6,733059539,306445486,New Issues
+gp-emma-dataport-website,Readme improvements,5,732979415,306445486,Sprint Backlog
+gp-emma-dataport-website,Replicate initial attempt,4,730302232,306445486,In Progress
+gp-emma-dataport-website,Production installation,3,730300021,306445486,Product Backlog
+gp-emma-dataport-website,dataport.emma.msrb.org initial attempt,1,728264361,306445486,In Progress
+gp-engineering-website,Expose ICAP listener,6,730332127,306382817,New Issues
+gp-engineering-website,Production installation,4,729321661,306382817,In Progress
+gp-engineering-website,Replicate initial attempt,3,729318709,306382817,New Issues
+gp-engineering-website,engineering.glasswallsolutions.com initial attempt,1,728275671,306382817,New Issues
+gp-filedrop-website,Create a baseline metrics for each micro-service and at instance / docker /pod level ,12,733127896,306444711,Sprint Backlog
+gp-filedrop-website,Create a baseline metrics for each micro-service ,11,733126481,306444711,Sprint Backlog
+gp-filedrop-website,"Extend the deploy script to other ""K8 version of proxy"" by just version change in k8_proxy_config.xxx file. ",10,733125512,306444711,Sprint Backlog
+gp-filedrop-website,Integrate rancher cluster script and proxy deployment script to single script.,9,733123756,306444711,Sprint Backlog
+gp-filedrop-website,Create initial single script to deploy proxy solution (k8s v0.1) to the rancher cluster,8,733123042,306444711,Sprint Backlog
+gp-filedrop-website,Create terraform script to create multinode auto expandable Rancher cluster,7,733122522,306444711,In Progress
+gp-filedrop-website,Other variation of cluster config/  Proxies to collect best performing metrics,6,728316899,306444711,Sprint Backlog
+gp-filedrop-website,Performance testing /metrics using already developed JMeter test engine,5,728315722,306444711,In Progress
+gp-filedrop-website,Application deployment and configuration of file-drop proxy ,3,728298662,306444711,Done
+gp-filedrop-website,Create technology approach for Option-B proxy using K8-proxy v1 as proxy for website : https://glasswall-file-drop.com/,1,728073551,306444711,Done
+gp-glasswallsolutions-website,Production installation,4,729626996,306557622,In Progress
+gp-glasswallsolutions-website,Replicate initial attempt,3,729624632,306557622,New Issues
+gp-glasswallsolutions-website,glasswallsolutions.com initial attempt,1,728285823,306557622,In Progress
+gp-jira-website,1st commit - work in progress,5,730238093,306564423,New Issues
+gp-jira-website,add k8s scripts related to issue #1,3,729076277,306564423,New Issues
+gp-jira-website,Create helm chart for k8s-reverse-proxy,2,728368150,306564423,New Issues
+gp-jira-website,Deploy single node k8s on GW AWS,1,728367381,306564423,New Issues
+gp-owasp-website,Create AMI,5,730446648,306565457,New Issues
+gp-owasp-website,Automate the k8 setup using terraform,4,730446189,306565457,New Issues
+gp-owasp-website,Setup k8 node with all the images,3,730445885,306565457,New Issues
+gp-owasp-website,Understand ICAP client proxy,2,730445511,306565457,New Issues
+gp-owasp-website,Understand existing solution ,1,730444071,306565457,New Issues
+gp-sharepoint,Rewrite Engine misses Sharepoint Homepage url rewrites,1,732873864,306560610,New Issues
+gp-uk-zones-com,Document Lets encrypt process,5,733346804,307674098,New Issues
+gp-uk-zones-com,Create a video with the solution in action (end to end workflow) ,4,731374410,307674098,New Issues
+gp-uk-zones-com,Production installation,1,730457465,307674098,New Issues
+GW-proxy,Programatically update wiki with website projects information,87,733139565,288977992,New Issues
+GW-proxy,Add initial documentation to wiki,85,731618032,288977992,New Issues
+GW-proxy,Start setting up dashboards,84,731617367,288977992,New Issues
+GW-proxy,Review existing information from google docs,83,731616882,288977992,New Issues
+GW-proxy,"Review existing documentation from Slack (chat, documents, videos)",82,731616593,288977992,New Issues
+GW-proxy,Review all existing information from projects - map information,81,731616295,288977992,New Issues
+GW-proxy,Setup Sections on wiki,80,731615816,288977992,New Issues
+GW-proxy,Setup Docusaurus Workflow,79,731615695,288977992,New Issues
+GW-proxy,Setup Docusaurus Pipelines,78,731615498,288977992,New Issues
+GW-proxy,Setup Docusaurus on Github,77,731615396,288977992,New Issues
+GW-proxy,Setup Docusaurus Repo,76,731615304,288977992,New Issues
+GW-proxy,Update README.md,75,731431881,288977992,In Progress
+GW-proxy,"Create a FAQ page with base docker image link, Procedure to get different access etc. ",70,714322681,288977992,In Progress
+GW-proxy,A Configured docker image with Icap client installed for use case 1,69,706461380,288977992,New Issues
+GW-proxy,A Test scenario file using JMeter configured for concurrency test,68,706434808,288977992,New Issues
+GW-proxy,Newcomers Onboarding Process,59,695061958,288977992,New Issues
+GW-proxy,Create Python coding guideline in .MD format to accommodate future changes,52,692372337,288977992,Peer Review
+GW-proxy,"Create Jupyter Notebook Guideline and keep it centrally, which all team can refer. ",45,692328583,288977992,In Progress
+GW-proxy,Update Checklist for new comers,35,691138480,288977992,Peer Review
+GW-proxy,create a Tech Radar mapping for the Tech used on these projects,32,690968537,288977992,New Issues
+GW-proxy,create a GW Slack Operating model markdown page,30,690967857,288977992,New Issues
+GW-proxy,create GitHub page with every Upwork resource currently working on these projects,29,690964403,288977992,New Issues
+GW-proxy,remove NodeJS has a backend language to use. from now on it should only be Python or Go,28,690963444,288977992,New Issues
+GW-proxy,create a deck/pdf that clearly explains the project's brief and scope,27,690963253,288977992,New Issues
+GW-proxy,Create a mapping per project for the resources currently allocated to it,26,690962399,288977992,New Issues
+GW-proxy,"create project that ""Generates coverage sets for supported file types""",25,690962032,288977992,In Progress
+GW-proxy,create new project: Create Threat Intelligence reports from XML files created by Glasswall Rebuild engine,24,690961199,288977992,New Issues
+GW-proxy,create a first pass at using the  https://pragmaticinstitute.com/product/framework/ ,23,690959658,288977992,New Issues
+icap-poc-load-balancer,Add full documentation on how to add / remove endpoints from the load balancer,4,715447936,301636842,Peer Review
+icap-poc-load-balancer,Implement Initial config to distribute to all ICAP endpoints,3,715447554,301636842,New Issues
+icap-poc-load-balancer,Add a public load balancer for port 1433,2,715447018,301636842,New Issues
+icap-poc-load-balancer,Add Additional Endpoints for ICAP,1,715446610,301636842,New Issues
+ICAP-threat-model,Images,1,731815639,307669474,
+k8-data-visualization,Extract k8-proxy repo's programmatically,140,731682115,289667349,In Progress
+k8-data-visualization,Create a new functionality of the github-labeller to create labels for a specific repo,138,731660893,289667349,Backlog
+k8-data-visualization,zenhub_boards notebook is showing some error,135,728097585,289667349,Peer Review
+k8-data-visualization,issues notebook is showing some error,134,728092766,289667349,Peer Review
+k8-data-visualization,issues notebook is showing some error,122,720423013,289667349,Backlog
+k8-data-visualization,Migrate application to docker image CentOS 7v,118,720034691,289667349,Peer Review
+k8-data-visualization,Apply Jupyter Themes in your notebooks - Moses,95,709565657,289667349,Backlog
+k8-data-visualization,Apply Text2Code for Jupyter notebook - Moses,87,709557850,289667349,Backlog
+k8-data-visualization,Create a Jupyter Notebook Table Content - Moses,84,709555784,289667349,In Progress
+k8-glasswall-rebuild,Fix the repo,48,725488791,287293218,New Issues
+k8-glasswall-rebuild,Rebuild statistics assessment,47,725312960,287293218,New Issues
+k8-glasswall-rebuild,Enhance the python script,46,725311578,287293218,New Issues
+k8-glasswall-rebuild,Place all XMLs under one folder,45,724879690,287293218,New Issues
+k8-glasswall-rebuild,Fix the repo,44,724031338,287293218,New Issues
+k8-glasswall-rebuild,Rebuild files from virus database provided,40,719176550,287293218,New Issues
+k8-glasswall-rebuild,Implement RabbitMQ/activemq on argo codebase,33,710302160,287293218,New Issues
+k8-glasswall-rebuild,add support for using this ICAP service to invoke the Glasswall engine https://github.com/filetrust/program-icap/wiki/Using-the-C-ICAP-Test-Client,26,699313902,287293218,New Issues
+k8-glasswall-rebuild,Explore & assess feasibility of orchestrating all the actions in https://github.com/filetrust/mvp-icap-cloud/wiki/Process-Flow#future-approach inside a pod,25,695434229,287293218,New Issues
+k8-glasswall-rebuild,create a POC using Jenkins X,21,695001457,287293218,New Issues
+k8-glasswall-rebuild,Create MD (markdown) file that explains the workflow ,5,686243302,287293218,New Issues
+k8-performance-use-cases,A Kubernetes (K8) native application able to generate large amounts of traffic,22,706431198,290273552,New Issues
+k8-performance-use-cases,Update the docker file with input from the test data storage,19,704328050,290273552,New Issues
+k8-performance-use-cases,Test the traffic generator documentation,17,700367170,290273552,Backlog
+k8-performance-use-cases,Create a pod for squid-cache-proxy that can be deployed with traffic generators.  ,16,699476548,290273552,Peer Review
+k8-performance-use-cases,Test ICAP Server using ICAP Client ,13,695328291,290273552,Peer Review
+k8-performance-use-cases,Design Load Script for defined Profiles & Load Patterns,7,691955012,290273552,In Progress
+k8-proxy-desktop,Rebuild App: Verification of ReadME for customer release,143,719619573,292545304,Backlog
+k8-proxy-desktop,POC Auto detection of pendrive when desktop is running.,122,715154987,292545304,New Issues
+k8-proxy-desktop,"Facing challenge in Node integration with React and Electron, so to fix that issue. (Once issue is fixed, we will able to see notebook and then we will mount the notebook root of the Jupiter visualization repo)",109,713806888,292545304,Backlog
+k8-proxy-desktop,"Not to start the Notebook directly on clicking the Jupyter Notebooks tab, rather user should be displayed page with a button on clicking this tab and once user click on that button the Notebook should start.",108,713806358,292545304,Backlog
+k8-proxy-desktop,To integrate latest version Notebook version with default container.,107,713805768,292545304,Backlog
+k8-proxy-desktop,File Drop: To add option that user can drag the file from header and could drop that to the File Drop button.,102,713792377,292545304,New Issues
+k8-proxy-desktop,Happy User and Stargazers and Forks count there is no heading of the section and also count is completely static,98,712233653,292545304,New Issues
+k8-proxy-desktop,Incase there is no internet connectivity then user is not displayed any user friendly error message when user clicks on any links under the desktop app,94,712219516,292545304,New Issues
+k8-proxy-desktop,Support for new member to join slack incase of any issue needs to be added.,92,711676943,292545304,New Issues
+k8-proxy-desktop,Pre-requisite such as Node and NPM version and screenshot related to it is missing from the READme,91,711674789,292545304,Backlog
+k8-proxy-desktop,"On clicking any link under the File Drop window, it opens a seperate window (Desktop app), rather than opening the link in same window",90,711656752,292545304,New Issues
+k8-proxy-desktop,Copyright of the complete desktop has to be one,88,711654262,292545304,Peer Review
+k8-proxy-desktop,There is no EULA present while installing the exe.,85,711651749,292545304,Peer Review
+k8-proxy-desktop," Chrome extension currently implemented captures form-data, need to add support to capture ajax calls",84,711643429,292545304,New Issues
+k8-proxy-desktop,As a user I should be able to visualize git repos from the notebooks in the app,82,710926936,292545304,New Issues
+k8-proxy-desktop,As a user I should be able to mount visualization repo on local docker,81,710926163,292545304,New Issues
+k8-proxy-desktop,As a user I should be able to run local Jupyter notebook docker images,80,710919308,292545304,Backlog
+k8-proxy-desktop, Build React website through CI/CD,77,709758755,292545304,In Progress
+k8-proxy-desktop,GIT API integration to raise any issue needs to be added by new member,76,709756070,292545304,New Issues
+k8-proxy-desktop,Publish a build to Github Release,75,709743400,292545304,Backlog
+k8-proxy-desktop,UI Option to join slack incase of any issue needs to be added by new member,71,708940320,292545304,New Issues
+k8-proxy-desktop,Report an issue should have Desktop UI ,68,708876578,292545304,New Issues
+k8-proxy-desktop,Website UX,57,706933664,292545304,New Issues
+k8-proxy-desktop,Have Readme contents on the website,56,706932667,292545304,New Issues
+k8-proxy-desktop,"Use-case : As a user I should be able to list Issue count, PR count, PR under the git browser",49,705318865,292545304,New Issues
+k8-proxy-desktop,Use-case : As a user I should be able to auto login ( Puppeteer to auto-login to user) into Forensic workbench,47,705318727,292545304,New Issues
+k8-proxy-desktop,Use-case : As a user I should be able to run Jupiter notebook and issue doc command fro there,46,705318669,292545304,Backlog
+k8-proxy-desktop,Use-case : As a user open desktop app he can see more details about the product on the home screen,45,705318588,292545304,New Issues
+k8-proxy-desktop,Use-case : As a user I should be able to add new suggestion or bug on the gitlab issue,44,705318533,292545304,Backlog
+k8-proxy-desktop,Use-case : As a user on home page for list of new features in the current version (Issues notes / Bugs ),43,705318480,292545304,New Issues
+k8-reverse-proxy,Nginx URL rewrites issues with Location headers on 301 and 302 responses,57,733083469,290214259,New Issues
+k8-reverse-proxy,gwproxy.env not found while building OVA and AMI,53,719563523,290214259,In Progress
+k8-reverse-proxy,k8 Image Requirements,52,715846342,290214259,New Issues
+k8-reverse-proxy,Implement the reverse proxy for https://glasswallsolutions.com,48,711534081,290214259,Peer Review
+k8-reverse-proxy,Implement the reverse proxy for https://file-drop.co.uk,46,709200863,290214259,In Progress
+k8-reverse-proxy,Target CentOS 8,41,706376434,290214259,New Issues
+k8-reverse-proxy,Move c-icap submodule to stable-src/,39,705754205,290214259,New Issues
+k8-reverse-proxy,Programmatically discover embedded URLs of interest,26,698503825,290214259,New Issues
+k8-reverse-proxy,Gov.uk-Some downloaded link files are not protected,24,697983954,290214259,New Issues
+k8-reverse-proxy,deceptive site workaround,21,696579255,290214259,In Progress
+k8-reverse-proxy,Create reference implementation,8,690882930,290214259,Backlog
+k8-reverse-proxy,Create diagram for Reverse proxy project,7,689278253,290214259,In Progress
+k8-reverse-proxy,"EC2 or Azure VM deployment for ""https://glasswallsolutions.com"" reverse proxy",5,687350708,290214259,New Issues
+k8-security,Building docker image for analyzing C binaries and the C# binaries,106,724498606,294057380,New Issues
+k8-security,Researching about the DAST tools for ICAP project,105,724498295,294057380,New Issues
+k8-security,Creating the video with the script,104,724498136,294057380,New Issues
+k8-security,DAST tools research for analysing binaries ,103,724008951,294057380,New Issues
+k8-security,Merge blocking with SonarCloud,102,724008738,294057380,New Issues
+k8-security,Diagram of automation in harden image. ,101,719298319,294057380,New Issues
+k8-security,Readme files for RedHat Image summary,100,719296081,294057380,New Issues
+k8-security,Confirm data protection and risk management milestones and link existing issues,97,715588960,294057380,New Issues
+k8-security,Review ICAP Project Documents for Privacy Risks,96,715581543,294057380,New Issues
+k8-security,Creare RedHat7.x harden Image,95,715540882,294057380,New Issues
+k8-security,Supplementary risk assessment detail,94,714772072,294057380,New Issues
+k8-security,Provide more details about security guidelines that can be applied to this images,92,713782832,294057380,New Issues
+k8-security,Implement sonarqube,90,712887644,294057380,New Issues
+k8-security,Create a PoC with the CI/CD in place.,88,712759428,294057380,New Issues
+k8-security,Create  a high-level CI/CD diagram for hardening images.,87,712759288,294057380,New Issues
+k8-security,Provide a report of installed packages and versions in the image,86,712759100,294057380,New Issues
+k8-security,Define what elements needs to be hardened within the base image and within the developer images.,85,712759012,294057380,New Issues
+k8-security,Code-review open source playbooks to apply CIS controls to the docker image,81,712757704,294057380,New Issues
+k8-security,Prepare lab to test open source DAST Tools,79,710217418,294057380,New Issues
+k8-security,Guidelines for use of SAST tools in harden image,77,710214966,294057380,New Issues
+k8-security,First points of contact - Incident Activation Process,76,710213930,294057380,New Issues
+k8-security,Identify Data acquisition techniques,75,710212819,294057380,New Issues
+k8-security,Create incident response process in GitHub,74,710212346,294057380,New Issues
+k8-security,Research incident response companies in UK,73,710211990,294057380,New Issues
+k8-security,Incident response activation process,72,710211061,294057380,New Issues
+k8-security,Provide current playbook to Jameel,71,710210631,294057380,New Issues
+k8-security,Prepare lab to test open source SAST Tools ,69,710206926,294057380,New Issues
+k8-security,Vulnerability risk management process flow and FAQs,66,707497825,294057380,New Issues
+k8-security,Risk assessment of Docker image one unpatch items,64,706717476,294057380,New Issues
+k8-security,Create proof of concept to create a Docker Centos image from iso,63,706717192,294057380,Peer Review
+k8-slack-bot,Integrate GWBOT,28,699209310,293076768,New Issues
+k8-slack-bot,"11. The raw issue data, to be consumed by the Jupyter Notebooks notebook.",27,699061340,293076768,New Issues
+k8-slack-bot,12. The data stored on a separate repo will allow the Developers working on the visualization to not have to deal with the data collection.,26,699060081,293076768,New Issues
+k8-slack-bot,10. Leverage osbot_aws api from public APIS,25,699057140,293076768,New Issues
+k8-slack-bot,9. The event data in JSON format to be injected to the elastic server,24,699056750,293076768,New Issues
+k8-slack-bot,9. The event data in JSON format to be injected to the elastic server,23,699056634,293076768,New Issues
+k8-slack-bot,8.4 Unit tests for owasp-git,22,699055921,293076768,New Issues
+k8-slack-bot,8.3 Enhance owasp to support fetching Git data from ELK,21,699055300,293076768,New Issues
+k8-slack-bot,8.2 Enhance owasp to support pushing Git data to ELK,20,699054305,293076768,New Issues
+k8-slack-bot,8.1 Evaluate git actions for reactions to Git events from serverless code.,19,699053118,293076768,New Issues
+k8-slack-bot,8. Setup a serverless workflow,18,699051263,293076768,New Issues
+k8-slack-bot,GitHub > Identify all needed access.,14,698274973,293076768,New Issues
+k8-slack-bot,Define Bot basic structure,13,698271444,293076768,New Issues
+k8-slack-bot,Create Architecture Diagram,7,696707191,293076768,New Issues
+k8-slack-bot,Fork initial repo,6,696699166,293076768,New Issues
+k8-slack-bot,Get use cases for bot application.,4,696697480,293076768,New Issues
+k8-slack-bot,Define webhooks functions,3,696697164,293076768,New Issues
+k8-slack-bot,Create README.md,1,695079821,293076768,New Issues
